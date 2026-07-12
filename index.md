@@ -1,3 +1,0 @@
-# SepticSteward
-
-Site under construction.
