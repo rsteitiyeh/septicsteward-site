@@ -153,6 +153,12 @@
       var not = $('[data-if="' + prefix + 'NotDone"]'), done = $('[data-if="' + prefix + 'Done"]');
       if (not) not.classList.remove("on");
       if (done) done.classList.add("on");
+      try {
+        var dl = document.createElement("a");
+        dl.href = "/downloads/septic-maintenance-schedule.pdf";
+        dl.setAttribute("download", "Septic-Maintenance-Schedule.pdf");
+        document.body.appendChild(dl); dl.click(); dl.remove();
+      } catch (e) {}
     });
   }
 
