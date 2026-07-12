@@ -13,7 +13,7 @@ A septic inspection checks tank levels, baffles, lids, and the drain field to co
 
 The price gap between those two tiers is real, and so is the difference in what you learn. A visual check can miss a failing drain field entirely. Which one you need depends on why you are inspecting: routine maintenance, a home purchase, or troubleshooting a symptom. Here is how to pick, and what a competent inspector actually does.
 
-Visual vs full inspection: what each tier covers
+## Visual vs full inspection: what each tier covers
 
 |                            |                                                                                                                                               |                         |                                                    |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- | -------------------------------------------------- |
@@ -25,7 +25,7 @@ Visual vs full inspection: what each tier covers
 
 A caution from pricing these ourselves: some sellers order the $150 visual and present it to buyers as a clean bill of health. It is not. If you are the buyer, insist on a full inspection with the tank opened, and get the report in writing with sludge measurements, not just a pass stamp.
 
-What a full septic inspection actually checks
+## What a full septic inspection actually checks
 
 A thorough inspector works through the system in order, from house to soil. Expect the visit to take 1.5 to 3 hours. If someone finishes in 30 minutes, you bought a visual no matter what the invoice says.
 
@@ -47,7 +47,7 @@ A thorough inspector works through the system in order, from house to soil. Expe
 
 The hydraulic load test is the part that separates a serious pre-purchase inspection from a drive-by. Several hundred gallons go down the drains over an hour or two. A field that is quietly failing will often surface water under that load even when it looks fine on a dry day.
 
-When a septic inspection is required
+## When a septic inspection is required
 
 Home sales are the big one. Many counties and most lenders in septic-heavy regions require a passing inspection before closing, and some states mandate a time-of-transfer inspection by law. Buyers should want one regardless: a failed system discovered after closing is a $5,000 to $20,000 surprise, and our repair cost breakdown at SepticSteward/septic-system-repair shows why.
 
@@ -55,7 +55,7 @@ For everyone else, it is a maintenance rhythm. The EPA (epa.gov/septic) recommen
 
 Other triggers worth acting on: buying a home with any system older than 15 years, adding a bedroom or an accessory dwelling, slow drains or odors you cannot explain, and before building a deck, pool, or driveway anywhere near the tank or field. Check with your local health department on the rules for your county, since inspection requirements vary a lot by state.
 
-Septic tank inspection cost: what moves the number
+## Septic tank inspection cost: what moves the number
 
 Within the $150 to $650 spread, four things set your price. Region is first; labor rates in the Northeast and on the West Coast run higher than the national midpoint. Access is second: buried lids add $50 to $150 in digging unless risers are installed.
 
@@ -67,7 +67,7 @@ Fourth is paperwork. Time-of-transfer inspections that require county forms and 
 
 *Approximate 2026 cost ranges by inspection type. Bars show the midpoint with the typical national range. Time-of-transfer paperwork and buried lids add to the total.*
 
-How to prepare, and how to read the report
+## How to prepare, and how to read the report
 
 Before the visit, find your system records and sketch where the tank and field are, or pull the permit drawing from the county. Expose the lids yourself if you are comfortable digging; that alone can save $100. Do not pump the tank right before a pre-purchase inspection, since an empty tank hides liquid level problems the inspector needs to see.
 
@@ -75,7 +75,7 @@ A useful report lists tank size and material, measured sludge and scum depth, ba
 
 If you do not know your tank size, the SepticSteward/calculator gives a quick estimate from bedrooms and household size, which is handy for sanity-checking what the inspector or the old permit claims. And if you want the full checklist we use, including a printable inspection prep sheet and a record log, it is part of the $19 homeowner guide at SepticSteward/guide.
 
-Choosing an inspector
+## Choosing an inspector
 
 Hire a septic-specific inspector, not a general home inspector. Many states license septic inspectors separately or run certification programs through the health department, and time-of-transfer reports usually must come from someone on the county's approved list. Ask for the license or certification number up front.
 
@@ -85,7 +85,7 @@ Sample report requests are a good filter too. A pro can show you a redacted past
 
 Scheduling matters more than people expect. In spring and early summer, inspectors in septic-heavy counties book out two to four weeks, and closing dates do not wait. Book the septic inspection the same week your offer is accepted, and ask whether the quote includes a return trip if the lids turn out to be buried deeper than the permit drawing shows.
 
-What happens if the inspection fails
+## What happens if the inspection fails
 
 A failed inspection is a negotiation document, not a death sentence. Small findings like a corroded baffle or a cracked lid cost a few hundred dollars to fix. Bigger findings, a leaking tank or a saturated field, run into the thousands, and buyers typically negotiate the repair or replacement into the sale price.
 
@@ -93,28 +93,28 @@ Get a second opinion on any major failure before writing checks. Inspectors occa
 
 If the inspection found surfacing sewage, treat the area as contaminated, keep children and pets off it, and contact your local health department for guidance. Surfaced effluent can carry pathogens, and the health department can also tell you the repair permits your county requires.
 
-FAQ
+## FAQ
 
-How much does a septic tank inspection cost?
+### How much does a septic tank inspection cost?
 
 A visual septic inspection costs $150 to $300 in 2026. A full inspection, with the tank opened, sludge measured, baffles checked, and a dye or hydraulic load test on the drain field, runs $300 to $650. Add $250 to $500 if the tank gets pumped during the visit, and $250 to $900 for a camera survey of the lines.
 
-How often should a septic system be inspected?
+### How often should a septic system be inspected?
 
 The EPA (epa.gov/septic) recommends a professional inspection every 1 to 3 years for conventional systems. Systems with pumps, floats, or aerobic treatment units should be checked annually, and some counties require that by permit. Inspect sooner any time you notice slow drains, odors, or wet spots over the field.
 
-Is a septic inspection required to sell a house?
+### Is a septic inspection required to sell a house?
 
 Often, yes. Several states mandate a time-of-transfer septic inspection, many counties require one for the deed transfer, and lenders backing rural loans frequently demand a passing report. Even where it is optional, most buyers' agents insist. Check your county health department's rules early, since scheduling an inspector near closing can take weeks.
 
-What is a septic dye test?
+### What is a septic dye test?
 
 A dye test sends fluorescent tracer dye down the drains with a volume of water, then checks whether dye surfaces over the drain field or reaches nearby ditches. Surfacing dye proves the field is not absorbing effluent. It is a useful screening tool, but a hydraulic load test with measured water volume is the stronger evidence.
 
-Can a home inspector check the septic system?
+### Can a home inspector check the septic system?
 
 Not adequately. A general home inspector typically runs water and looks for obvious backups, which is a visual check at best. Tank opening, sludge measurement, and load testing require a septic-specific inspector, and many states license them separately. For a purchase, hire a licensed septic inspector and keep the general inspection for the house itself.
 
-Bottom line
+## Bottom line
 
 Schedule a septic inspection every 1 to 3 years, spend the $300 to $650 on the full version when buying a home or when the system is over 15 years old, and insist on a written report with actual measurements. A $400 inspection that catches a $500 baffle problem before it becomes a $15,000 drain field failure is the best deal in homeownership.

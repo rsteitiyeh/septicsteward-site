@@ -94,6 +94,24 @@ function parseArticle(md) {
   return { title, meta, body };
 }
 
+
+/* ---- extract FAQ pairs from an "## FAQ" section for FAQPage schema ---- */
+function faqPairs(mdBody) {
+  const m = mdBody.match(/^##\s+FAQ\s*$([\s\S]*?)(?=^##\s|\Z)/m);
+  if (!m) return [];
+  const sec = m[1];
+  const parts = sec.split(/^###\s+/m).slice(1);
+  const clean = (t) => t.replace(/\[(.+?)\]\((.+?)\)/g, "$1").replace(/[#*`>]/g, "").replace(/^\s*-\s+/gm, "").replace(/\s+/g, " ").trim();
+  const out = [];
+  for (const p of parts) {
+    const nl = p.indexOf("\n");
+    const q = (nl === -1 ? p : p.slice(0, nl)).trim();
+    const a = clean(nl === -1 ? "" : p.slice(nl + 1));
+    if (q && a) out.push({ q, a });
+  }
+  return out;
+}
+
 /* ---- render articles ---- */
 const contentDir = path.join(ROOT, "content");
 const articles = [];
@@ -104,20 +122,29 @@ if (fs.existsSync(contentDir)) {
     const { title, meta, body } = parseArticle(md);
     const slug = (meta.slug || f.replace(/\.md$/, "")).trim();
     // internal-link convention "SepticSteward/some-slug" -> /some-slug/
-    let fixed = body.replace(new RegExp(BRAND + "\\/([a-z0-9-]+)", "g"), (m, s) => `${SITE}/${s}/`);
+    let fixed = body
+      .replace(new RegExp(BRAND + "\\/calculator", "g"), `${SITE}/#calculator`)
+      .replace(new RegExp(BRAND + "\\/guide(?![a-z0-9-])", "g"), `${SITE}/guides/`)
+      .replace(new RegExp(BRAND + "\\/([a-z0-9-]+)", "g"), (m, sl) => `${SITE}/${sl}/`);
     let html = marked.parse(fixed);
     // media images live in content/media/
     html = html.replace(/src="media\//g, 'src="/media/');
     const updated = meta.updated || new Date().toISOString().slice(0, 10);
     const byline = meta.byline || `The ${BRAND} Team (Trilot)`;
     const desc = fixed.replace(/[#|*`\[\]]/g, " ").replace(/\s+/g, " ").trim().slice(0, 155);
-    const schema = JSON.stringify({
-      "@context": "https://schema.org", "@type": "Article",
+    const graph = [{
+      "@type": "Article",
       headline: title, dateModified: updated, datePublished: updated,
       author: { "@type": "Organization", name: byline.replace(/\s*\(.*\)$/, "") },
       publisher: { "@type": "Organization", name: BRAND },
       mainEntityOfPage: `${SITE}/${slug}/`
+    }];
+    const faqs = faqPairs(fixed);
+    if (faqs.length) graph.push({
+      "@type": "FAQPage",
+      mainEntity: faqs.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } }))
     });
+    const schema = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
     const inner = `<article class="art">
 <h1>${esc(title)}</h1>
 <p class="byline">By ${esc(byline)} · Updated ${esc(updated)}</p>

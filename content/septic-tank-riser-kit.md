@@ -13,13 +13,13 @@ A septic tank riser kit is a stackable pipe section, usually polyethylene or PVC
 
 Whether a riser makes sense mostly comes down to how deep your tank sits and how long you plan to own the house. Tanks buried 6 inches deep barely need one. Tanks buried 2 feet down under sod cost real money to uncover every few years, and that's where risers pay off fast.
 
-What a septic tank riser actually is
+## What a septic tank riser actually is
 
 Picture a wide plastic tube, 12 to 24 inches across, made of stackable rings. The bottom ring gets sealed to the access opening on your tank lid. You stack rings until the top sits at or just above grade, then bolt on a lid rated for foot traffic. That's the whole device.
 
 Most kits include the rings, a lid, stainless screws, and butyl rope or gasket sealant. Some include a safety pan, an inner barrier below the lid that keeps a child or pet from falling in even if the outer lid comes off. If your kit doesn't include one, add it. They run about $30 to $60.
 
-Why install one: the digging math
+## Why install one: the digging math
 
 Every pump out starts with finding and exposing your tank lid. If it's buried, someone digs, and pumpers charge $50 to $150 for that labor on top of the pump fee. Some charge more if the lid is deep or the ground is frozen.
 
@@ -31,7 +31,7 @@ A $250 DIY riser kit erases those fees permanently, usually paying for itself by
 
 *Approximate costs: a DIY riser kit vs professional install vs 15 years of digging fees with no riser.*
 
-Riser types compared
+## Riser types compared
 
 |                                |                          |                                  |                                                                                   |
 | ------------------------------ | ------------------------ | -------------------------------- | --------------------------------------------------------------------------------- |
@@ -44,7 +44,7 @@ For most homeowners we'd point to polyethylene. It's light enough to carry acros
 
 Concrete risers still make sense on older concrete tanks where you want matching material, or where local code requires them. Just know you'll need at least two strong people or a machine to set the sections. This is a generic product category; every major hardware store and septic supplier carries comparable kits, and we don't push any particular brand.
 
-Sizing your riser kit
+## Sizing your riser kit
 
 Two measurements decide everything: the diameter of your tank's access opening and the depth from that opening to the ground surface.
 
@@ -54,7 +54,7 @@ Then depth. Dig to the lid, measure from the tank surface to grade, and buy ring
 
 One caveat from cold climates: in areas with hard frost, ask your county health department about burial depth rules. Some jurisdictions want the lid slightly below grade with a marker instead of proud of the lawn, and frost heave can stress rigid joints. Local rules beat anything we write here.
 
-Installation overview
+## Installation overview
 
 This is a reasonable weekend job for one person on a shallow tank. Budget 2 to 4 hours the first time.
 
@@ -78,7 +78,7 @@ If your tank sits deeper than about 2 feet, or the existing concrete lid is crac
 
 A word on safety. Never lean into or enter an open septic tank; the gases can drop a healthy adult in seconds. Work from outside the opening, keep kids and pets away while the lid is off, and if sewage has surfaced in the yard, treat it as a contamination issue and contact your local health department.
 
-What a riser kit costs, DIY vs installed
+## What a riser kit costs, DIY vs installed
 
 DIY parts run $100 to $400 depending on diameter, height, and material. A typical setup, 20 inch polyethylene rings reaching 18 inches with a safety pan, lands around $220 to $280 in early 2026 pricing. Add a tube of extra butyl and a wire brush and you're still under $300.
 
@@ -86,7 +86,7 @@ Professional installation runs $300 to $1,000 including parts. The wide range re
 
 If you're pricing a full system where risers are one line item among many, the numbers sit inside our install cost hub at SepticSteward/septic-tank-installation-cost. New installs should always include risers from day one; retrofitting later costs more than speccing them upfront.
 
-Living with a riser: looks, mowing, and landscaping
+## Living with a riser: looks, mowing, and landscaping
 
 The most common objection we hear isn't cost, it's the green plastic disc in the middle of the lawn. Fair. A few honest options: most lid colors come in green or black so they read as a utility cover rather than a hazard cone, and a ring of low groundcover or a movable planter can soften the look.
 
@@ -94,7 +94,7 @@ What you can't do is bury it under a raised bed, park a shed on it, or plant shr
 
 Mowing is a non issue if you set the lid an inch or two proud and taper the soil up to it. Deck blades pass right over. Where lids sit higher, 4 inches or more, mark them; we've read enough reader emails about mower blades meeting riser lids to mention it.
 
-Mistakes we see over and over
+## Mistakes we see over and over
 
   - Buying by lid size instead of opening size, then finding the riser won't seat
 
@@ -110,28 +110,28 @@ That last one matters more than people think. Many tanks have two lids, one over
 
 For the full maintenance playbook, riser specs, pump out logs, and the inspection checklist we use, the $19 homeowner guide at SepticSteward/guide bundles it in one place.
 
-FAQ
+## FAQ
 
-How much does a septic tank riser kit cost?
+### How much does a septic tank riser kit cost?
 
 Expect $100 to $400 for DIY parts and $300 to $1,000 professionally installed. A common middle case, a 20 inch polyethylene riser reaching an 18 inch deep lid, runs about $250 in parts. Having your pumper add one during a pump out is often the cheapest installed option at $200 to $400.
 
-Can I install a septic tank riser myself?
+### Can I install a septic tank riser myself?
 
 Yes, if the tank is reasonably shallow and you're comfortable digging. The job is exposing the lid, sealing an adapter ring to clean concrete with butyl rope, stacking rings to grade, and bolting on a lid. Budget 2 to 4 hours. Never lean into or enter the open tank; the gases are dangerous.
 
-Are septic risers worth it?
+### Are septic risers worth it?
 
 Usually, yes. Pumpers charge $50 to $150 to dig up a buried lid each visit, and over 15 years of pump outs and inspections that adds up to $300 to $700. A $250 kit typically pays for itself by the second pump out, and it makes home sale inspections faster and cheaper.
 
-What size septic riser do I need?
+### What size septic riser do I need?
 
 Match the diameter to your tank's access opening, commonly 12, 16, 20, or 24 inches, and buy enough ring height to reach from the tank surface to an inch or two above grade. Measure the opening itself, not the old lid, since lids overhang. When between diameters, go bigger.
 
-Should the riser lid be above or below ground?
+### Should the riser lid be above or below ground?
 
 Slightly above grade, an inch or two, so rainwater sheds off instead of pooling and leaking into the tank. Some cold climate counties prefer lids just below grade with a marker for aesthetics or frost reasons, so check local rules. Never bury a riser lid deep; that defeats the point.
 
-Bottom line
+## Bottom line
 
 A septic tank riser kit is one of the few septic upgrades with a clear payback: $100 to $400 in parts against $50 to $150 in digging fees every single pump out. Measure your opening, pick polyethylene unless you have a reason not to, seal it on clean concrete, and set the lid just proud of grade. Then your next pump out takes minutes to start instead of an hour of shoveling.
