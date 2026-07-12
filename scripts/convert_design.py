@@ -89,10 +89,13 @@ body = re.sub(r'\{\{ (\w+) \}\}', r'<span data-bind="\1"></span>', body)
 # brand tokens
 body = body.replace('{{AUTHOR_NAME}}','Rami Steitieh').replace('{{AUTHOR_BIO}}','Building online since 1997. The Trilot team researches, builds, and tests every tool and guide on this site.').replace('{{LEGAL_ENTITY_NAME}}','Trilot LLC')
 
-# 8. Footer links -> real pages
-body = body.replace('<a href="#" ', '<a href="/privacy/" ', 1)
-body = body.replace('<a href="#" ', '<a href="/affiliate-disclosure/" ', 1)
-body = body.replace('<a href="#" ', '<a href="/terms/" ', 1)
+# 8. Footer links -> real pages (match by label, order-independent)
+import re as _re
+def fixlink(m):
+    href = {'Privacy Policy':'/privacy/','Affiliate Disclosure':'/affiliate-disclosure/','Terms of Use':'/terms/'}[m.group(2)]
+    return m.group(1).replace('href="#"', f'href="{href}"') + m.group(2)
+body = _re.sub(r'(<a href="#"[^>]*>)(Privacy Policy|Affiliate Disclosure|Terms of Use)', fixlink, body)
+body = body.replace('<span data-bind="LEGAL_ENTITY_NAME"></span>','Trilot LLC').replace('{{LEGAL_ENTITY_NAME}}','Trilot LLC')
 
 page = f"""<!DOCTYPE html>
 <html lang="en">
