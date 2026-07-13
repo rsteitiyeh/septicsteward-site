@@ -1,0 +1,11 @@
+---
+/**
+ * Tool dispatcher — renders the site's tool archetype per site.config.json.
+ * "calculator" -> Calculator.astro + src/config/tool.json
+ * "quiz"       -> Quiz.astro       + src/config/tool.json
+ */
+import site from '../../site.config.json';
+import Calculator from './Calculator.astro';
+import Quiz from './Quiz.astro';
+---
+{site.toolArchetype === 'quiz' ? <Quiz /> : <Calculator />}

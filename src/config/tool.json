@@ -1,0 +1,31 @@
+{
+  "kind": "calculator",
+  "heading": "Septic Pumping Calculator",
+  "sub": "How often should your tank be pumped, and what will it cost? Estimates based on EPA guidance and typical tank sizing.",
+  "fields": [
+    { "id": "household", "label": "People in household", "type": "number", "value": 4, "min": 1 },
+    { "id": "tank", "label": "Tank size", "type": "select", "options": [
+      { "label": "750 gallons", "value": 750 },
+      { "label": "1,000 gallons", "value": 1000 },
+      { "label": "1,250 gallons", "value": 1250 },
+      { "label": "1,500 gallons", "value": 1500 },
+      { "label": "Not sure (assume 1,000)", "value": 1000 }
+    ]},
+    { "id": "disposal", "label": "Garbage disposal used?", "type": "select", "options": [
+      { "label": "No", "value": 1 },
+      { "label": "Yes", "value": 2 }
+    ]},
+    { "id": "lastPumped", "label": "Years since last pumping", "type": "number", "value": 2, "min": 0, "step": 0.5 }
+  ],
+  "outputs": [
+    { "id": "interval", "label": "Recommended pumping interval" },
+    { "id": "next", "label": "Your next pumping" },
+    { "id": "cost", "label": "Typical cost range", "note": "varies by region and tank access" }
+  ],
+  "statuses": [
+    { "id": "ok", "label": "On Schedule", "tone": "ok" },
+    { "id": "due", "label": "Due Soon", "tone": "warn" },
+    { "id": "overdue", "label": "Overdue", "tone": "bad" }
+  ],
+  "disclaimer": "Estimates only. The EPA recommends inspection about every 3 years and pumping every 3-5 years for typical systems. Usage, tank size, and local conditions vary - confirm with a licensed septic professional."
+}

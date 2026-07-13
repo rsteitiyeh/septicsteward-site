@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import Article from '../layouts/Article.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  return articles.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry, all: articles }
+  }));
+}
+
+const { entry, all } = Astro.props;
+const { Content } = await render(entry);
+
+// naive related: 3 most recent others (bank-driven relatedness can come later)
+const related = all
+  .filter((a) => a.id !== entry.id)
+  .sort((a, b) => +b.data.publishDate - +a.data.publishDate)
+  .slice(0, 3)
+  .map((a) => ({ title: a.data.title, slug: a.id, description: a.data.description }));
+---
+<Article entry={entry} related={related}>
+  <Content />
+</Article>

@@ -1,0 +1,79 @@
+---
+import site from '../../site.config.json';
+interface Props {
+  title: string;
+  description?: string;
+  /** force noindex even post-stealth (e.g. 404, guides while thin) */
+  noindex?: boolean;
+  ogType?: string;
+}
+const { title, description = '', noindex = false, ogType = 'website' } = Astro.props;
+const robots = site.stealth || noindex ? 'noindex, nofollow' : 'index, follow';
+const canonical = new URL(Astro.url.pathname, site.SITE).href;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <meta name="robots" content={robots} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={title} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonical} />
+  <slot name="head" />
+  {site.cfBeaconToken && (
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={JSON.stringify({ token: site.cfBeaconToken })}
+    ></script>
+  )}
+</head>
+<body>
+  <slot />
+  <script>
+    // Global subscribe handler (pilot pattern): any <form data-subscribe> posts the
+    // email to /api/subscribe (D1), then instantly delivers the lead magnet.
+    import site from '../../site.config.json';
+    const magnet = site.magnet || {};
+    document.querySelectorAll('form[data-subscribe]').forEach((form) => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const input = form.querySelector('input[type="email"]');
+        const btn = form.querySelector('button');
+        const email = input && input.value ? input.value.trim() : '';
+        if (!email) return;
+        if (btn) { btn.disabled = true; btn.dataset.orig = btn.textContent; btn.textContent = '...'; }
+        let ok = false;
+        try {
+          const r = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email })
+          });
+          ok = r.ok;
+        } catch (err) {}
+        const msg = document.createElement('p');
+        msg.className = 'subscribe-done';
+        if (ok && magnet.file) {
+          const a = document.createElement('a');
+          a.href = magnet.file; a.download = ''; document.body.appendChild(a); a.click(); a.remove();
+          msg.innerHTML = (magnet.doneMessage || 'You are in - your download is starting now.') +
+            ' <a href="' + magnet.file + '" download>Download did not start?</a>';
+        } else if (ok) {
+          msg.textContent = 'You are in - check your inbox.';
+        } else {
+          msg.textContent = 'Something went wrong - please try again.';
+          if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig; }
+        }
+        form.insertAdjacentElement('afterend', msg);
+        if (ok) form.hidden = true;
+      });
+    });
+  </script>
+</body>
+</html>

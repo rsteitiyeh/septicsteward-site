@@ -1,0 +1,30 @@
+---
+// Simple prose layout for trust pages.
+import site from '../../site.config.json';
+import Base from './Base.astro';
+interface Props { title: string; description?: string }
+const { title, description = '' } = Astro.props;
+const t = site.theme;
+---
+<Base title={`${title} | ${site.BRAND}`} description={description}>
+  <main class="page">
+    <p class="page-brand"><a href="/">{site.BRAND}</a></p>
+    <h1>{title}</h1>
+    <div class="page-prose"><slot /></div>
+    <footer class="page-foot">
+      <nav>
+        <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/editorial/">Editorial policy</a>
+      </nav>
+      <small>{site.legalEntity} · © 2026 {site.BRAND}</small>
+    </footer>
+  </main>
+</Base>
+
+<style define:vars={{ bg: t.bg, ink: t.ink, accent: t.accent, headingFont: t.headingFont, bodyFont: t.bodyFont }} is:global>
+  .page { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; background: var(--bg); color: var(--ink); font-family: var(--bodyFont); }
+  .page h1 { font-family: var(--headingFont); }
+  .page-brand a { font-weight: 900; color: var(--accent); text-decoration: none; }
+  .page-prose h2 { margin-top: 2em; font-family: var(--headingFont); }
+  .page-foot { margin-top: 64px; border-top: 1px solid rgba(0,0,0,.15); padding-top: 20px; font-size: 14px; }
+  .page-foot nav a { color: var(--accent); }
+</style>

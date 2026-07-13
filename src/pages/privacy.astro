@@ -1,0 +1,17 @@
+---
+import site from '../../site.config.json';
+import Page from '../layouts/Page.astro';
+---
+<Page title="Privacy Policy" description={`How ${site.BRAND} handles your data.`}>
+  <p>This policy describes what {site.BRAND} ({site.legalEntity}) collects and why. Short version: as little as possible.</p>
+  <h2>What we collect</h2>
+  <p>If you subscribe with your email address, we store it to send you what you asked for (a free download and occasional related emails). You can unsubscribe at any time via the link in any email.</p>
+  <p>We use privacy-friendly, cookie-less analytics (Cloudflare Web Analytics) to see aggregate page views. We do not build visitor profiles, and we do not sell or share personal data.</p>
+  <h2>Payments</h2>
+  <p>Paid products are processed by Lemon Squeezy as merchant of record. We never see or store your card details.</p>
+  <h2>Third parties</h2>
+  <p>Email delivery is handled by MailerLite. Advertising, where present, is served by our advertising partner and marked as advertising.</p>
+  <h2>Your rights</h2>
+  <p>Want your data deleted? Email us via the <a href="/contact/">contact page</a> and we will remove it.</p>
+  <p><em>Last updated: July 2026.</em></p>
+</Page>

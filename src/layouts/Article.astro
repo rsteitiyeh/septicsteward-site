@@ -1,0 +1,93 @@
+---
+import Base from './Base.astro';
+import site from '../../site.config.json';
+import { extractFaq } from '../lib/faq.mjs';
+
+interface Props {
+  entry: any;        // content collection entry
+  related?: { title: string; slug: string; description?: string }[];
+}
+const { entry, related = [] } = Astro.props;
+const { title, description, publishDate, updatedDate, author } = entry.data;
+const updated = updatedDate ?? publishDate;
+const authorName = author ?? site.author.name;
+const canonical = new URL(`/${entry.id}/`, site.SITE).href;
+
+const faqs = extractFaq(entry.body);
+const graph = [];
+graph.push({
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: authorName },
+  publisher: { '@type': 'Organization', name: site.BRAND },
+  datePublished: publishDate.toISOString().slice(0, 10),
+  dateModified: updated.toISOString().slice(0, 10),
+  mainEntityOfPage: canonical
+});
+if (faqs.length) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a }
+    }))
+  });
+}
+const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Base title={`${title} | ${site.BRAND}`} description={description} ogType="article">
+  <script type="application/ld+json" set:html={jsonld} slot="head" />
+  <slot name="site-header" />
+  <main class="article-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> › <a href="/guides/">Guides</a> › <span>{title}</span>
+    </nav>
+    <article>
+      <header class="article-head">
+        <h1>{title}</h1>
+        <p class="byline">
+          By {authorName} · Updated <time datetime={updated.toISOString().slice(0, 10)}>{fmt(updated)}</time>
+        </p>
+      </header>
+      <div class="prose">
+        <slot />
+      </div>
+      <aside class="cta-card">
+        <slot name="cta">
+          <p><strong>Try the free tool</strong> — no signup needed.</p>
+          <a class="btn" href="/#tool">Open the free tool</a>
+        </slot>
+      </aside>
+      {related.length > 0 && (
+        <section class="related">
+          <h2>Related guides</h2>
+          <ul>
+            {related.map(r => (
+              <li><a href={`/${r.slug}/`}>{r.title}</a>{r.description && <p>{r.description}</p>}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </article>
+  </main>
+  <slot name="site-footer" />
+</Base>
+
+<style is:global>
+  .article-wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+  .breadcrumb { font-size: 13px; opacity: .75; margin-bottom: 24px; }
+  .article-head h1 { line-height: 1.15; margin: 0 0 8px; }
+  .byline { font-size: 14px; opacity: .8; margin: 0 0 32px; }
+  .prose h2 { margin-top: 2.2em; }
+  .prose h3 { margin-top: 1.6em; }
+  .prose table { border-collapse: collapse; width: 100%; margin: 1.2em 0; }
+  .prose th, .prose td { border: 1px solid #d5d5d5; padding: 8px 10px; text-align: left; }
+  .prose img { max-width: 100%; height: auto; }
+  .cta-card { margin: 40px 0; padding: 24px; border: 1px solid #ddd; border-radius: 12px; }
+  .cta-card .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; color: #fff; background: var(--accent, #0E5C4A); font-weight: 700; text-decoration: none; }
+  .related ul { list-style: none; padding: 0; }
+  .related li { margin: 12px 0; }
+</style>

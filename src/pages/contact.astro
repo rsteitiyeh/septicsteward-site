@@ -1,0 +1,12 @@
+---
+import site from '../../site.config.json';
+import Page from '../layouts/Page.astro';
+---
+<Page title="Contact" description={`How to reach the ${site.BRAND} team.`}>
+  <p>We read every message.</p>
+  <h2>Email</h2>
+  <p>Write to us at <strong>hello@{new URL(site.SITE).hostname}</strong>. We usually reply within a few business days.</p>
+  <h2>Corrections</h2>
+  <p>Spotted something wrong or out of date? Tell us — we take corrections seriously and update pages with a visible updated date.</p>
+  <p>{site.BRAND} is operated by {site.legalEntity}.</p>
+</Page>

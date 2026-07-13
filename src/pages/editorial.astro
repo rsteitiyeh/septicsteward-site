@@ -1,0 +1,14 @@
+---
+import site from '../../site.config.json';
+import Page from '../layouts/Page.astro';
+---
+<Page title="Editorial Policy" description={`How ${site.BRAND} researches, writes, and uses AI.`}>
+  <h2>How content gets made</h2>
+  <p>Articles are researched, drafted, and fact-checked by the Trilot team using a combination of human editing and AI writing tools. Every article passes a checklist before publishing: claims verified against sources we actually opened, working examples with real numbers, and a named byline with a visible updated date.</p>
+  <h2>What we never do</h2>
+  <p>We never invent statistics, expert personas, credentials, or reviews. Where we lack first-hand expertise, we say so and show our research instead.</p>
+  <h2>Corrections</h2>
+  <p>Errors get fixed, not buried — corrected pages show an updated date. Report anything via the <a href="/contact/">contact page</a>.</p>
+  <h2>Advertising & affiliate disclosure</h2>
+  <p>Some pages carry ads or affiliate links, always disclosed. Recommendations are never sold.</p>
+</Page>

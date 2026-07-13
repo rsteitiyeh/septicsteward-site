@@ -1,0 +1,25 @@
+{
+  "SITE": "https://septicsteward.com",
+  "BRAND": "SepticSteward",
+  "niche": "03-septic",
+  "stealth": true,
+  "toolArchetype": "calculator",
+  "mailerlite": { "formAction": "https://assets.mailerlite.com/jsonp/PLACEHOLDER/forms/subscribe" },
+  "lemonsqueezy": { "checkoutUrl": "https://PLACEHOLDER.lemonsqueezy.com/checkout" },
+  "cfBeaconToken": "",
+  "magnet": { "file": "/downloads/septic-maintenance-schedule.pdf", "doneMessage": "You're in - the Septic Maintenance Schedule is downloading now." },
+  "author": { "name": "{{AUTHOR_NAME}}", "bio": "{{AUTHOR_BIO}}" },
+  "legalEntity": "Trilot LLC",
+  "comingSoon": {
+    "promise": "Practical septic care for homeowners - maintenance schedules, real costs, and a calculator that ends the guesswork. Coming soon.",
+    "captureLabel": "Send me the free maintenance schedule"
+  },
+  "theme": {
+    "bg": "#F5EFDF",
+    "ink": "#26301F",
+    "accent": "#C96F3B",
+    "accent2": "#2F4A2E",
+    "headingFont": "Georgia, serif",
+    "bodyFont": "system-ui, sans-serif"
+  }
+}

@@ -1,0 +1,11 @@
+---
+import site from '../../site.config.json';
+import Base from '../layouts/Base.astro';
+import ComingSoon from '../components/ComingSoon.astro';
+import Landing from '../components/Landing.astro';
+---
+{site.stealth ? (
+  <ComingSoon />
+) : (
+  <Landing />
+)}

@@ -1,0 +1,4 @@
+# Crawl allowed ON PURPOSE while in stealth: pages carry <meta robots noindex>.
+# A hard Disallow would let bare URLs index. Sitemap withheld until un-stealth.
+User-agent: *
+Allow: /

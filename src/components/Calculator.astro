@@ -1,0 +1,103 @@
+---
+/**
+ * CALCULATOR ENGINE (archetype B) — config-driven.
+ * Reads src/config/tool.json:
+ * {
+ *   "kind": "calculator",
+ *   "heading": "...", "sub": "...",
+ *   "fields": [ { "id", "label", "type": "number"|"select", "value", "min"?, "step"?, "unit"?, "options"?: [{"label","value"}] } ],
+ *   "outputs": [ { "id", "label", "note"? } ],
+ *   "statuses": [ { "id", "label", "tone": "ok"|"warn"|"bad" } ],
+ *   "disclaimer": "..."
+ * }
+ * The MATH lives in src/tools/compute.js (per-site file): export function compute(values) ->
+ *   { status: "<statusId>", outputs: { "<outputId>": { value: "38.4 fl oz", note?: "..." } } }
+ * Styling: neutral base classes; each site skins via its own CSS (design-matched).
+ */
+import cfg from '../config/tool.json';
+---
+<div class="calc" id="tool-calculator" data-tool="calculator">
+  <div class="calc-inputs">
+    <h3>{cfg.heading}</h3>
+    {cfg.sub && <p class="calc-sub">{cfg.sub}</p>}
+    {cfg.fields.map((f) => (
+      <label class="calc-field" data-field={f.id}>
+        {f.label} {f.unit && <span class="calc-unit">{f.unit}</span>}
+        {f.type === 'select' ? (
+          <select id={`calc-${f.id}`}>
+            {f.options.map((o) => <option value={o.value}>{o.label}</option>)}
+          </select>
+        ) : (
+          <input
+            id={`calc-${f.id}`}
+            type="number"
+            value={f.value}
+            min={f.min}
+            step={f.step ?? 'any'}
+          />
+        )}
+      </label>
+    ))}
+  </div>
+  <div class="calc-results" id="calc-results" aria-live="polite">
+    <div class="calc-status">
+      <span class="calc-dot"></span>
+      <div><small>Status</small><strong id="calc-status-label">—</strong></div>
+    </div>
+    {cfg.outputs.map((o) => (
+      <div class="calc-dose" data-output={o.id}>
+        <span>{o.label}</span>
+        <strong id={`calc-out-${o.id}`}>—</strong>
+        <small id={`calc-note-${o.id}`}>{o.note ?? ''}</small>
+      </div>
+    ))}
+    {cfg.disclaimer && <p class="calc-disclaimer">{cfg.disclaimer}</p>}
+  </div>
+</div>
+
+<script>
+  import cfg from '../config/tool.json';
+  import { compute } from '../tools/compute.js';
+
+  const $ = (id) => document.getElementById(id);
+  const read = () => {
+    const v = {};
+    for (const f of cfg.fields) v[f.id] = Number($(`calc-${f.id}`).value) || 0;
+    return v;
+  };
+  const run = () => {
+    const r = compute(read());
+    const status = cfg.statuses.find((s) => s.id === r.status) ?? cfg.statuses[0];
+    $('calc-status-label').textContent = status.label;
+    $('calc-results').className = 'calc-results tone-' + status.tone;
+    for (const o of cfg.outputs) {
+      const out = r.outputs[o.id] ?? {};
+      $(`calc-out-${o.id}`).textContent = out.value ?? '—';
+      if (out.note !== undefined) $(`calc-note-${o.id}`).textContent = out.note;
+    }
+  };
+  for (const f of cfg.fields) $(`calc-${f.id}`).addEventListener('input', run);
+  run();
+</script>
+
+<style is:global>
+  .calc { display: grid; grid-template-columns: 1.2fr .8fr; border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 10px 40px rgba(0,0,0,.12); }
+  .calc-inputs, .calc-results { padding: 32px; }
+  .calc-sub { margin-top: 0; opacity: .8; }
+  .calc-field { display: block; margin-top: 14px; font-size: 13px; font-weight: 800; }
+  .calc-field .calc-unit { float: right; font-weight: 500; opacity: .7; }
+  .calc-field input, .calc-field select { display: block; width: 100%; margin-top: 6px; padding: 12px; border: 1px solid #c8d4d6; border-radius: 10px; font: inherit; background: #fff; }
+  .calc-results { background: #eef6ee; transition: background .3s; }
+  .calc-results.tone-warn { background: #fff3c9; }
+  .calc-results.tone-bad { background: #e7dede; }
+  .calc-status { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+  .calc-status small { display: block; text-transform: uppercase; font-size: 11px; }
+  .calc-status strong { font-size: 22px; }
+  .calc-dot { width: 18px; height: 18px; border-radius: 50%; background: #29ad6a; }
+  .tone-warn .calc-dot { background: #df9d0a; }
+  .tone-bad .calc-dot { background: #8a6f6f; }
+  .calc-dose { padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,.12); display: grid; grid-template-columns: 1fr auto; }
+  .calc-dose small { grid-column: 1 / -1; opacity: .75; }
+  .calc-disclaimer { font-size: 11px; opacity: .8; margin-top: 16px; }
+  @media (max-width: 720px) { .calc { grid-template-columns: 1fr; } }
+</style>
