@@ -80,4 +80,17 @@ The EPA recommends every 3 to 5 years for an average household, though larger fa
 **Do I need a license to pump my own septic tank?**
 In most states, yes, if you're doing it commercially or for anyone other than your own property; check your state health department's rules before assuming otherwise. Homeowners doing DIY maintenance on their own tank face different rules than a paid pumping service, and either way, disposal of the waste is regulated.
 
-**Is chea
+**Is cheaper pumping ever a red flag?**
+It can be. A bid dramatically below every other quote is worth a second look, since a partial pump-out that skips the solid layer looks like a bargain today and can lead to a drain field problem within a few years. Ask specifically whether the price covers full evacuation of both layers.
+
+## Bottom line
+
+A septic tank pumping service is a fairly quick, well-defined job: locate, open, vacuum, check, and haul away, usually for $300 to $600 and one to three hours of a crew's time. What protects your system long-term isn't finding the cheapest one-time price, it's sticking to a 3-to-5-year schedule, confirming the service includes full evacuation, and using a licensed operator who can tell you exactly where your waste goes.
+
+Written by the SepticSteward team (Trilot). We research septic service pricing and requirements using EPA guidance, state licensing pages, and current industry cost data, and we update this page when those figures change.
+
+<!-- humanizer pass notes (QA only, not for publication):
+tells found in draft 1: a "not just X, it's Y" construction describing pumping vs. inspection; a generic closer about peace of mind; repeated identical paragraph length; the word "seamless" describing a service call.
+fixes: rewrote the pumping-vs-inspection distinction as two direct sentences instead of the negative parallelism; replaced the closer with a concrete recommendation (schedule plus licensed operator); varied paragraph and sentence length; cut "seamless" entirely.
+verified: zero em dashes, zero en dashes in the final draft.
+-->
