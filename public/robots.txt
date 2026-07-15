@@ -1,4 +1,22 @@
 # Crawl allowed ON PURPOSE while in stealth: pages carry <meta robots noindex>.
 # A hard Disallow would let bare URLs index. Sitemap withheld until un-stealth.
+# v1.2 (ARTICLE-GUIDELINES 17): search/citation bots explicitly allowed - the
+# eligibility switch for AI-answer citations. Default: allow all reputable bots.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: *
 Allow: /

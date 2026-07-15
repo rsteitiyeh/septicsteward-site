@@ -8,7 +8,7 @@
   "lemonsqueezy": { "checkoutUrl": "https://PLACEHOLDER.lemonsqueezy.com/checkout" },
   "cfBeaconToken": "",
   "magnet": { "file": "/downloads/septic-maintenance-schedule.pdf", "doneMessage": "You're in - the Septic Maintenance Schedule is downloading now." },
-  "author": { "name": "{{AUTHOR_NAME}}", "bio": "{{AUTHOR_BIO}}" },
+  "author": { "name": "the SepticSteward team (Trilot)", "bio": "SepticSteward is published by the Trilot team. We build free, fact-checked guides, tools, and study resources, verified against the primary sources they cover. More at https://trilot.com." },
   "legalEntity": "Trilot LLC",
   "comingSoon": {
     "promise": "Practical septic care for homeowners - maintenance schedules, real costs, and a calculator that ends the guesswork. Coming soon.",
