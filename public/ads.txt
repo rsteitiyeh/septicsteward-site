@@ -1,0 +1,2 @@
+# ads.txt placeholder — no seller lines until an ad partner is approved.
+# Populated by Journey by Mediavine on approval. Spec: https://iabtechlab.com/ads-txt/
