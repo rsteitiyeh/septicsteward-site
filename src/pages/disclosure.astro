@@ -1,7 +1,6 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
-const host = new URL(site.SITE).hostname;
 ---
 <Page title="Affiliate & Advertising Disclosure" description={`How ${site.BRAND} makes money, in plain terms.`}>
   <p>The US Federal Trade Commission requires sites to disclose paid relationships. This page is that disclosure, written to be read rather than to satisfy a lawyer.</p>
@@ -28,7 +27,7 @@ const host = new URL(site.SITE).hostname;
   <p>{site.BRAND} is independent. Where we name an exam, agency, standard, brand, or manufacturer, it's to describe the subject we're covering. We're not affiliated with, endorsed by, or sponsored by any of them.</p>
 
   <h2>Questions</h2>
-  <p>If anything here looks like it's been influenced by money, tell us — <strong>hello@{host}</strong>. We'd rather hear it from you than not hear it at all.</p>
+  <p>If anything here looks like it's been influenced by money, tell us via our <a href="/contact/">contact form</a>. We'd rather hear it from you than not hear it at all.</p>
 
   <p><em>Last updated: July 2026.</em></p>
 </Page>

@@ -1,17 +1,114 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
-const host = new URL(site.SITE).hostname;
 ---
 <Page title="Contact" description={`How to reach ${site.BRAND}.`}>
-  <p>We read every message.</p>
+  <p>We read every message. Use the form below and we'll usually reply within a few business days.</p>
 
-  <h2>Email</h2>
-  <p>Write to us at <strong>hello@{host}</strong>. We usually reply within a few business days.</p>
+  <form id="contact-form" method="POST" action="/api/contact">
+    <p class="cf-row">
+      <label for="cf-name">Your name <span class="cf-opt">(optional)</span></label>
+      <input id="cf-name" name="name" type="text" maxlength="100" autocomplete="name" />
+    </p>
+    <p class="cf-row">
+      <label for="cf-email">Your email</label>
+      <input id="cf-email" name="email" type="email" required maxlength="200" autocomplete="email" />
+    </p>
+    <p class="cf-row">
+      <label for="cf-topic">What's this about?</label>
+      <select id="cf-topic" name="topic">
+        <option value="general">General question</option>
+        <option value="correction">A correction — something here is wrong</option>
+        <option value="data">My data (access or deletion)</option>
+      </select>
+    </p>
+    <p class="cf-row">
+      <label for="cf-message">Message</label>
+      <textarea id="cf-message" name="message" required rows="7" maxlength="5000"></textarea>
+    </p>
+    <p class="cf-hp" aria-hidden="true">
+      <label for="cf-website">Leave this field empty</label>
+      <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+    </p>
+    <p><button type="submit" id="cf-submit">Send message</button></p>
+    <p id="cf-status" role="status" aria-live="polite"></p>
+  </form>
 
   <h2>Corrections</h2>
   <p>Spotted something wrong or out of date? Tell us. We take corrections seriously, check them against the source, and update the page with a visible updated date. If you can point us at the source, even better.</p>
 
   <h2>Your data</h2>
-  <p>Want to know what we hold about you, or want it deleted? Email the same address and we'll take care of it. See our <a href="/privacy/">privacy policy</a>.</p>
+  <p>Want to know what we hold about you, or want it deleted? Send it through the form above — pick "My data" — and we'll take care of it. See our <a href="/privacy/">privacy policy</a>.</p>
 </Page>
+
+<style>
+  #contact-form { margin: 28px 0 8px; }
+  .cf-row { display: flex; flex-direction: column; gap: 6px; margin: 0 0 18px; }
+  .cf-row label { font-weight: 600; font-size: 15px; }
+  .cf-opt { font-weight: 400; opacity: .6; }
+  .cf-row input, .cf-row select, .cf-row textarea {
+    font: inherit; font-size: 16px; padding: 10px 12px;
+    border: 1px solid rgba(0,0,0,.28); border-radius: 6px;
+    background: #fff; color: inherit; width: 100%; box-sizing: border-box;
+  }
+  .cf-row textarea { resize: vertical; min-height: 120px; }
+  .cf-row input:focus-visible, .cf-row select:focus-visible, .cf-row textarea:focus-visible,
+  #cf-submit:focus-visible { outline: 3px solid currentColor; outline-offset: 2px; }
+  .cf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  #cf-submit {
+    font: inherit; font-weight: 700; cursor: pointer;
+    padding: 12px 22px; border: 0; border-radius: 6px; min-height: 44px;
+    background: #16181B; color: #fff;
+  }
+  #cf-submit[disabled] { opacity: .55; cursor: default; }
+  #cf-status { min-height: 1.4em; font-size: 15px; margin-top: 4px; }
+  #cf-status.ok { color: #1B6E3C; font-weight: 600; }
+  #cf-status.bad { color: #A32020; font-weight: 600; }
+</style>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var statusEl = document.getElementById('cf-status');
+    var btn = document.getElementById('cf-submit');
+
+    // No-JS fallback lands back here with a flag.
+    var qs = new URLSearchParams(location.search);
+    if (qs.get('sent')) { statusEl.className = 'ok'; statusEl.textContent = 'Thanks — your message is with us.'; }
+    if (qs.get('error')) { statusEl.className = 'bad'; statusEl.textContent = "That didn't send. Check your email address and try again."; }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      statusEl.className = ''; statusEl.textContent = 'Sending…';
+      btn.disabled = true;
+      var fd = new FormData(form);
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          name: fd.get('name'), email: fd.get('email'), topic: fd.get('topic'),
+          message: fd.get('message'), website: fd.get('website')
+        })
+      })
+        .then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); })
+        .then(function (d) {
+          if (d && d.ok) {
+            form.reset();
+            statusEl.className = 'ok';
+            statusEl.textContent = 'Thanks — your message is with us. We usually reply within a few business days.';
+          } else {
+            statusEl.className = 'bad';
+            statusEl.textContent = (d && d.error === 'invalid email')
+              ? 'That email address does not look right — check it and try again.'
+              : "That didn't send. Please try again in a moment.";
+          }
+        })
+        .catch(function () {
+          statusEl.className = 'bad';
+          statusEl.textContent = "That didn't send — you may be offline. Please try again.";
+        })
+        .finally(function () { btn.disabled = false; });
+    });
+  })();
+</script>

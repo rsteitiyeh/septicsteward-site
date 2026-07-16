@@ -1,7 +1,6 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
-const host = new URL(site.SITE).hostname;
 ---
 <Page title="Editorial Policy" description={`How ${site.BRAND} researches, writes, fact-checks, and uses AI.`}>
   <h2>How content gets made</h2>
@@ -20,7 +19,7 @@ const host = new URL(site.SITE).hostname;
   </ul>
 
   <h2>Corrections</h2>
-  <p>Errors get fixed, not buried — a corrected page carries an updated date. Report anything that looks wrong to <strong>hello@{host}</strong> and we'll check it against the source.</p>
+  <p>Errors get fixed, not buried — a corrected page carries an updated date. Report anything that looks wrong via our <a href="/contact/">contact form</a> and we'll check it against the source.</p>
 
   <h2>Advertising and affiliate links</h2>
   <p>Some pages carry ads, and some emails carry affiliate links. Both are always disclosed, and neither is ever sold as a recommendation. Full details in our <a href="/disclosure/">disclosure</a>.</p>

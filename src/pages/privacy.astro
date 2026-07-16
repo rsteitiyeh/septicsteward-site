@@ -1,7 +1,6 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
-const host = new URL(site.SITE).hostname;
 ---
 <Page title="Privacy Policy" description={`How ${site.BRAND} handles your data.`}>
   <p>This policy describes what {site.BRAND} collects and why. Short version: as little as we can get away with, and we never sell it.</p>
@@ -29,7 +28,7 @@ const host = new URL(site.SITE).hostname;
   <p>We don't sell or rent your personal information to anyone, and we never have.</p>
 
   <h2>Your rights</h2>
-  <p>You can ask us what we hold about you, ask us to correct it, or ask us to delete it — including if you're covered by the GDPR or the CCPA. Email <strong>hello@{host}</strong> and we'll action it. We don't charge for this and we won't make it difficult.</p>
+  <p>You can ask us what we hold about you, ask us to correct it, or ask us to delete it — including if you're covered by the GDPR or the CCPA. Send it through our <a href="/contact/">contact form</a> (pick "My data") and we'll action it. We don't charge for this and we won't make it difficult.</p>
 
   <h2>Children</h2>
   <p>This site isn't directed at children under 13 and we don't knowingly collect their information.</p>

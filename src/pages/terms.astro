@@ -1,7 +1,6 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
-const host = new URL(site.SITE).hostname;
 ---
 <Page title="Terms of Use" description={`Terms for using ${site.BRAND}.`}>
   <p>By using {site.BRAND}, you agree to these terms. They are deliberately plain.</p>
@@ -26,7 +25,7 @@ const host = new URL(site.SITE).hostname;
   <p>We work hard to keep information accurate, but we can't guarantee it and accept no liability for losses arising from its use.</p>
 
   <h2>Contact</h2>
-  <p>Questions about these terms: <strong>hello@{host}</strong>.</p>
+  <p>Questions about these terms: use our <a href="/contact/">contact form</a>.</p>
 
   <p><em>Last updated: July 2026.</em></p>
 </Page>

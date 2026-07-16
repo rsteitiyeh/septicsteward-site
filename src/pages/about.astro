@@ -1,7 +1,6 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
-const host = new URL(site.SITE).hostname;
 ---
 <Page title={`About ${site.BRAND}`} description={`What ${site.BRAND} is, who it's for, and how it pays for itself.`}>
   <p>{site.BRAND} is an independent site. {site.author.bio}</p>
@@ -17,5 +16,5 @@ const host = new URL(site.SITE).hostname;
   <p>Everything here is free. There's nothing to buy. The site is paid for by advertising on these pages, and by affiliate commissions on products we recommend in our emails. Neither changes what we tell you — the full <a href="/disclosure/">disclosure is here</a>.</p>
 
   <h2>Corrections</h2>
-  <p>If something here is wrong or has gone out of date, we want to know: <strong>hello@{host}</strong>. Corrections get made and dated, not quietly buried.</p>
+  <p>If something here is wrong or has gone out of date, we want to know — use our <a href="/contact/">contact form</a>. Corrections get made and dated, not quietly buried.</p>
 </Page>
