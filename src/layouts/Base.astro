@@ -10,6 +10,7 @@ interface Props {
 const { title, description = '', noindex = false, ogType = 'website' } = Astro.props;
 const robots = site.stealth || noindex ? 'noindex, nofollow' : 'index, follow';
 const canonical = new URL(Astro.url.pathname, site.SITE).href;
+const ga4 = (site.ga4 && site.ga4.measurementId) || '';
 ---
 <!doctype html>
 <html lang="en">
@@ -25,19 +26,71 @@ const canonical = new URL(Astro.url.pathname, site.SITE).href;
   <meta property="og:type" content={ogType} />
   <meta property="og:url" content={canonical} />
   <slot name="head" />
-  {site.cfBeaconToken && (
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon={JSON.stringify({ token: site.cfBeaconToken })}
-    ></script>
+  {ga4 && (
+    <Fragment>
+      {/* Google Consent Mode v2 — analytics_storage denied until the visitor accepts.
+          GA4 still receives cookieless pings while denied, so traffic is measured
+          from day one (Raptive requires GA history and it cannot be backfilled). */}
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        var __c = null;
+        try { __c = localStorage.getItem('consent-analytics'); } catch (e) {}
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: __c === 'granted' ? 'granted' : 'denied'
+        });
+      </script>
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4}`}></script>
+      <script is:inline define:vars={{ ga4 }}>
+        gtag('js', new Date());
+        gtag('config', ga4);
+      </script>
+    </Fragment>
   )}
 </head>
 <body>
   <slot />
+
+  {ga4 && (
+    <div id="cookie-banner" class="cookie-banner" hidden>
+      <p>
+        We use cookies for analytics to understand what's useful here. Ads and
+        affiliate links, where present, are always disclosed. See our
+        <a href="/privacy/">privacy policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" data-consent="denied" class="cookie-btn ghost">Decline</button>
+        <button type="button" data-consent="granted" class="cookie-btn">Accept</button>
+      </div>
+    </div>
+  )}
+
   <script>
-    // Global subscribe handler (pilot pattern): any <form data-subscribe> posts the
-    // email to /api/subscribe (D1), then instantly delivers the lead magnet.
+    // ---- Cookie consent (interim). Mediavine's CMP replaces this at Journey approval. ----
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+      let stored = null;
+      try { stored = localStorage.getItem('consent-analytics'); } catch (e) {}
+      if (!stored) banner.hidden = false;
+      banner.querySelectorAll('[data-consent]').forEach((b) => {
+        b.addEventListener('click', () => {
+          const v = b.getAttribute('data-consent');
+          try { localStorage.setItem('consent-analytics', v); } catch (e) {}
+          if (window.gtag) window.gtag('consent', 'update', { analytics_storage: v });
+          banner.hidden = true;
+        });
+      });
+    }
+  </script>
+
+  <script>
+    // Global subscribe handler: any <form data-subscribe> posts the email to
+    // /api/subscribe, which stores it in D1 AND subscribes it to this site's
+    // MailerLite group (which triggers magnet delivery + the nurture sequence).
+    // The file is also handed over instantly so the visitor never waits on email.
     import site from '../../site.config.json';
     const magnet = site.magnet || {};
     document.querySelectorAll('form[data-subscribe]').forEach((form) => {
@@ -75,5 +128,25 @@ const canonical = new URL(Astro.url.pathname, site.SITE).href;
       });
     });
   </script>
+
+  <style is:global>
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      display: flex; flex-wrap: wrap; gap: 12px 24px;
+      align-items: center; justify-content: center;
+      padding: 14px 20px; background: #16181B; color: #F4F2ED;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 14px;
+      box-shadow: 0 -2px 18px rgba(0,0,0,.22);
+    }
+    .cookie-banner p { margin: 0; max-width: 70ch; }
+    .cookie-banner a { color: inherit; text-decoration: underline; }
+    .cookie-actions { display: flex; gap: 10px; }
+    .cookie-btn {
+      border: 0; border-radius: 6px; padding: 9px 18px; cursor: pointer;
+      font: inherit; font-weight: 700; background: #F4F2ED; color: #16181B;
+    }
+    .cookie-btn.ghost { background: transparent; color: #F4F2ED; border: 1px solid rgba(244,242,237,.45); }
+    .cookie-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  </style>
 </body>
 </html>

@@ -1,14 +1,21 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
+const host = new URL(site.SITE).hostname;
 ---
-<Page title={`About ${site.BRAND}`} description={`Who builds and maintains ${site.BRAND}.`}>
-  <p>{site.BRAND} is an independent publication owned and operated by {site.legalEntity}.</p>
+<Page title={`About ${site.BRAND}`} description={`What ${site.BRAND} is, who it's for, and how it pays for itself.`}>
+  <p>{site.BRAND} is an independent site. {site.author.bio}</p>
+
   <h2>What this site is</h2>
-  <p>We build practical, free tools and plain-spoken guides for this topic. Everything here exists to answer real questions with specific, checkable information — not to pad out search results.</p>
-  <h2>Who builds it</h2>
-  <p>{site.BRAND} is built and maintained by the Trilot team — Rami Steitieh, building online since 1997, with editorial and engineering support. We research the topics we cover, build and test the tools ourselves, and cite sources we have actually checked.</p>
+  <p>Free tools and plain-spoken guides on one subject, done properly. Every guide exists to answer a real question with specific, checkable information — the number, the rule, the actual cost — not to pad out a search result with 2,000 words that never get to the point.</p>
+
+  <h2>How we work</h2>
+  <p>We read the primary sources: the published exam outlines, the federal and state regulations, the manufacturer specs, the industry cost surveys. When we cite a figure, we link where it came from so you can check it yourself. We build and test the tools on this site ourselves.</p>
+  <p>Where we don't have first-hand expertise, we say so and show our research rather than pretending. See our <a href="/editorial/">editorial policy</a> for how that works in practice, including how we use AI.</p>
+
   <h2>How we make money</h2>
-  <p>The tools and guides are free. We sell a paid digital guide, and some pages may carry advertising or clearly disclosed affiliate links. None of that changes what we recommend.</p>
-  <p>Questions? See our <a href="/contact/">contact page</a> or read our <a href="/editorial/">editorial policy</a>.</p>
+  <p>Everything here is free. There's nothing to buy. The site is paid for by advertising on these pages, and by affiliate commissions on products we recommend in our emails. Neither changes what we tell you — the full <a href="/disclosure/">disclosure is here</a>.</p>
+
+  <h2>Corrections</h2>
+  <p>If something here is wrong or has gone out of date, we want to know: <strong>hello@{host}</strong>. Corrections get made and dated, not quietly buried.</p>
 </Page>

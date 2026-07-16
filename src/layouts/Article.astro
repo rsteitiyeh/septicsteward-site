@@ -19,7 +19,7 @@ graph.push({
   '@type': 'Article',
   headline: title,
   description,
-  author: { '@type': 'Person', name: authorName },
+  author: { '@type': 'Organization', name: authorName, url: site.SITE },
   publisher: { '@type': 'Organization', name: site.BRAND },
   datePublished: publishDate.toISOString().slice(0, 10),
   dateModified: updated.toISOString().slice(0, 10),

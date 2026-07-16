@@ -1,14 +1,29 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
+const host = new URL(site.SITE).hostname;
 ---
-<Page title="Editorial Policy" description={`How ${site.BRAND} researches, writes, and uses AI.`}>
+<Page title="Editorial Policy" description={`How ${site.BRAND} researches, writes, fact-checks, and uses AI.`}>
   <h2>How content gets made</h2>
-  <p>Articles are researched, drafted, and fact-checked by the Trilot team using a combination of human editing and AI writing tools. Every article passes a checklist before publishing: claims verified against sources we actually opened, working examples with real numbers, and a named byline with a visible updated date.</p>
+  <p>Articles are researched, drafted, and fact-checked by the {site.BRAND} editorial team, using a combination of human editing and AI writing tools. We think readers deserve to know that plainly rather than find it out.</p>
+  <p>Every article clears the same checklist before it goes up: claims verified against sources we actually opened, working examples with real numbers, a byline, and a visible updated date.</p>
+
+  <h2>Where our facts come from</h2>
+  <p>Primary sources first — published exam outlines, federal and state regulations, standards bodies, manufacturer documentation, and industry cost data. Where a figure matters, we link to where it came from so you can check it rather than take our word for it. Where sources disagree, we say so instead of picking the tidiest number.</p>
+
   <h2>What we never do</h2>
-  <p>We never invent statistics, expert personas, credentials, or reviews. Where we lack first-hand expertise, we say so and show our research instead.</p>
+  <ul>
+    <li>We never invent statistics, expert personas, credentials, or reviews.</li>
+    <li>We never reproduce real or past exam questions. Our practice questions are written from published content outlines — the topics that get tested — never copied from an exam.</li>
+    <li>We never let an advertiser or an affiliate commission decide what a guide says.</li>
+    <li>Where we lack first-hand expertise, we say so and show our research.</li>
+  </ul>
+
   <h2>Corrections</h2>
-  <p>Errors get fixed, not buried — corrected pages show an updated date. Report anything via the <a href="/contact/">contact page</a>.</p>
-  <h2>Advertising & affiliate disclosure</h2>
-  <p>Some pages carry ads or affiliate links, always disclosed. Recommendations are never sold.</p>
+  <p>Errors get fixed, not buried — a corrected page carries an updated date. Report anything that looks wrong to <strong>hello@{host}</strong> and we'll check it against the source.</p>
+
+  <h2>Advertising and affiliate links</h2>
+  <p>Some pages carry ads, and some emails carry affiliate links. Both are always disclosed, and neither is ever sold as a recommendation. Full details in our <a href="/disclosure/">disclosure</a>.</p>
+
+  <p><em>Last updated: July 2026.</em></p>
 </Page>

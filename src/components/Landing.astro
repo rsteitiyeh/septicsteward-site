@@ -9,7 +9,6 @@
 import site from '../../site.config.json';
 import Base from '../layouts/Base.astro';
 import Tool from './Tool.astro';
-const ls = site.lemonsqueezy.checkoutUrl;
 ---
 <Base
   title="Free Septic Maintenance Schedule &amp; Pumping Calculator | SepticSteward"
@@ -128,22 +127,26 @@ const ls = site.lemonsqueezy.checkoutUrl;
     <section id="handbook" class="section offer soil">
       <div class="offer-grid">
         <div>
-          <p class="eyebrow light">One-time · optional</p>
+          <p class="eyebrow light">Free download</p>
           <h2>The Septic Owner's Handbook</h2>
           <p>Everything scattered across the free guides, organized and printable in one place you can keep by the utility panel.</p>
           <p class="honest">Everything on this site is free. The handbook just puts it in one organized, printable place.</p>
         </div>
         <div class="price">
-          <strong>$19</strong>
-          <p class="price-note">One-time · instant download</p>
+          <strong>FREE</strong>
+          <p class="price-note">Instant download</p>
           <ul class="check-list">
             <li><span class="check">✓</span><span>Troubleshooting flowcharts for backups, odors &amp; slow drains</span></li>
             <li><span class="check">✓</span><span>The exact questions to ask a pump-out contractor</span></li>
             <li><span class="check">✓</span><span>Inspection checklists you can hand to a pro</span></li>
             <li><span class="check">✓</span><span>The additive truth guide — what actually helps</span></li>
           </ul>
-          <a class="btn" href={ls}>Buy the Handbook — $19</a>
-          <p class="price-small">Secure checkout via Lemon Squeezy · 30-day guarantee</p>
+          <form class="email compact" data-subscribe method="post">
+            <label class="sr" for="handbook-email">Email address</label>
+            <input id="handbook-email" name="fields[email]" type="email" required placeholder="you@email.com" />
+            <button type="submit">Send me the free Handbook</button>
+          </form>
+          <p class="price-small">Instant download link. No spam, no sales calls.</p>
         </div>
       </div>
     </section>
@@ -158,7 +161,6 @@ const ls = site.lemonsqueezy.checkoutUrl;
     <div class="ad">Advertisement</div>
 
     <section class="section byline">
-      <div class="avatar">{'{{AUTHOR_PHOTO}}'}</div>
       <div>
         <p class="eyebrow">Who's Behind SepticSteward</p>
         <h2>{site.author.name}</h2>
@@ -200,9 +202,9 @@ const ls = site.lemonsqueezy.checkoutUrl;
       </svg>
       <span class="brand-word sm">Septic<b>Steward</b></span>
     </a>
-    <nav><a href="/guides/">Guides</a><a href="#calculator">Calculator</a><a href="#handbook">Handbook</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
-    <p>Some links on this site are affiliate links. If you click through and make a purchase, {site.legalEntity} may earn a commission at no additional cost to you. This helps keep our guides free.</p>
-    <small>{site.legalEntity} · © 2026 SepticSteward. Educational information only — not professional engineering or septic advice.</small>
+    <nav><a href="/guides/">Guides</a><a href="#calculator">Calculator</a><a href="#handbook">Handbook</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclosure/">Disclosure</a><a href="/editorial/">Editorial</a></nav>
+    <p>Some links on this site are <a href="/disclosure/">affiliate links</a>. If you click through and make a purchase, we may earn a commission at no additional cost to you. This helps keep our guides free.</p>
+    <small>© 2026 SepticSteward. Educational information only — not professional engineering or septic advice.</small>
   </footer>
 </Base>
 

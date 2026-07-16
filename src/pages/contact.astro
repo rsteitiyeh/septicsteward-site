@@ -1,12 +1,17 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
+const host = new URL(site.SITE).hostname;
 ---
-<Page title="Contact" description={`How to reach the ${site.BRAND} team.`}>
+<Page title="Contact" description={`How to reach ${site.BRAND}.`}>
   <p>We read every message.</p>
+
   <h2>Email</h2>
-  <p>Write to us at <strong>hello@{new URL(site.SITE).hostname}</strong>. We usually reply within a few business days.</p>
+  <p>Write to us at <strong>hello@{host}</strong>. We usually reply within a few business days.</p>
+
   <h2>Corrections</h2>
-  <p>Spotted something wrong or out of date? Tell us — we take corrections seriously and update pages with a visible updated date.</p>
-  <p>{site.BRAND} is operated by {site.legalEntity}.</p>
+  <p>Spotted something wrong or out of date? Tell us. We take corrections seriously, check them against the source, and update the page with a visible updated date. If you can point us at the source, even better.</p>
+
+  <h2>Your data</h2>
+  <p>Want to know what we hold about you, or want it deleted? Email the same address and we'll take care of it. See our <a href="/privacy/">privacy policy</a>.</p>
 </Page>

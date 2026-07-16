@@ -1,0 +1,34 @@
+---
+import site from '../../site.config.json';
+import Page from '../layouts/Page.astro';
+const host = new URL(site.SITE).hostname;
+---
+<Page title="Affiliate & Advertising Disclosure" description={`How ${site.BRAND} makes money, in plain terms.`}>
+  <p>The US Federal Trade Commission requires sites to disclose paid relationships. This page is that disclosure, written to be read rather than to satisfy a lawyer.</p>
+
+  <h2>The short version</h2>
+  <p>Everything on {site.BRAND} is free. We make money from advertising on these pages, and from affiliate commissions on products we recommend — mostly in our emails. Neither one changes what we tell you.</p>
+
+  <h2>Advertising</h2>
+  <p>Pages here may display ads. Ads are labelled as advertising. We don't choose the individual advertisers, and an advertiser buying space here doesn't earn a mention in our content, ever.</p>
+
+  <h2>Affiliate links</h2>
+  <p>Some links — mainly in our email newsletters — are affiliate links. If you buy through one, we may earn a commission <strong>at no additional cost to you</strong>. You never pay more for using our link.</p>
+  <p>Where an email contains affiliate links, it says so in the email itself. We're not going to bury it.</p>
+
+  <h2>What we will not do</h2>
+  <ul>
+    <li>We don't recommend something we wouldn't suggest to a friend in the trade.</li>
+    <li>We don't sell placements in our guides, rankings, or recommendations.</li>
+    <li>We don't invent statistics, experts, credentials, or reviews to make an offer look better.</li>
+    <li>We don't let a commission decide what a guide says.</li>
+  </ul>
+
+  <h2>No affiliation with certifying bodies</h2>
+  <p>{site.BRAND} is independent. Where we name an exam, agency, standard, brand, or manufacturer, it's to describe the subject we're covering. We're not affiliated with, endorsed by, or sponsored by any of them.</p>
+
+  <h2>Questions</h2>
+  <p>If anything here looks like it's been influenced by money, tell us — <strong>hello@{host}</strong>. We'd rather hear it from you than not hear it at all.</p>
+
+  <p><em>Last updated: July 2026.</em></p>
+</Page>

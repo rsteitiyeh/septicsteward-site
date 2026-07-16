@@ -1,18 +1,32 @@
 ---
 import site from '../../site.config.json';
 import Page from '../layouts/Page.astro';
+const host = new URL(site.SITE).hostname;
 ---
 <Page title="Terms of Use" description={`Terms for using ${site.BRAND}.`}>
   <p>By using {site.BRAND}, you agree to these terms. They are deliberately plain.</p>
+
   <h2>Information, not professional advice</h2>
-  <p>Content and tools on this site are for general information. They are not professional, legal, medical, or financial advice. Tool outputs are estimates — verify against product labels, official sources, or a licensed professional before acting.</p>
-  <h2>Paid products</h2>
-  <p>Digital products are sold as one-time purchases via Lemon Squeezy. If a product doesn't do what we said it would, contact us — we'd rather refund than argue.</p>
+  <p>Content and tools on this site are for general information. They are not professional, legal, medical, or financial advice. Tool outputs are estimates — verify against product labels, official sources, or a licensed professional before acting on them.</p>
+
+  <h2>No guarantee of a result</h2>
+  <p>Studying here does not guarantee you'll pass anything, and following a guide does not guarantee a particular outcome. Exams, regulations, and requirements change, and they vary by state and jurisdiction. Always confirm the current requirements with the body that actually administers them.</p>
+
+  <h2>It's free</h2>
+  <p>Everything on this site is free to use. There's nothing to buy here and no account to keep. The site is supported by advertising and by affiliate commissions disclosed in our <a href="/disclosure/">disclosure</a>.</p>
+
   <h2>Intellectual property</h2>
-  <p>Content on this site belongs to {site.legalEntity} unless noted. You may link to and quote it with attribution; you may not republish it wholesale.</p>
+  <p>Content and tools on this site are ours unless noted otherwise. You're welcome to link to us and quote us with attribution; you may not republish our material wholesale.</p>
+  <p>Our practice questions are original, written from published content outlines. They are not real or past exam questions, and we don't reproduce any.</p>
+
   <h2>No affiliation</h2>
-  <p>Brand names appear only to describe compatibility or subject matter. {site.BRAND} is not affiliated with, endorsed by, or sponsored by any certifying body, agency, or manufacturer mentioned.</p>
+  <p>Brand, exam, agency, and standard names appear only to describe compatibility or subject matter. {site.BRAND} is not affiliated with, endorsed by, or sponsored by any certifying body, agency, testing vendor, or manufacturer mentioned, and all trademarks belong to their owners.</p>
+
   <h2>Liability</h2>
   <p>We work hard to keep information accurate, but we can't guarantee it and accept no liability for losses arising from its use.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about these terms: <strong>hello@{host}</strong>.</p>
+
   <p><em>Last updated: July 2026.</em></p>
 </Page>

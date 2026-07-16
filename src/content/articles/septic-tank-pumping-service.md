@@ -87,7 +87,7 @@ It can be. A bid dramatically below every other quote is worth a second look, si
 
 A septic tank pumping service is a fairly quick, well-defined job: locate, open, vacuum, check, and haul away, usually for $300 to $600 and one to three hours of a crew's time. What protects your system long-term isn't finding the cheapest one-time price, it's sticking to a 3-to-5-year schedule, confirming the service includes full evacuation, and using a licensed operator who can tell you exactly where your waste goes.
 
-Written by the SepticSteward team (Trilot). We research septic service pricing and requirements using EPA guidance, state licensing pages, and current industry cost data, and we update this page when those figures change.
+Written by the SepticSteward team. We research septic service pricing and requirements using EPA guidance, state licensing pages, and current industry cost data, and we update this page when those figures change.
 
 <!-- humanizer pass notes (QA only, not for publication):
 tells found in draft 1: a "not just X, it's Y" construction describing pumping vs. inspection; a generic closer about peace of mind; repeated identical paragraph length; the word "seamless" describing a service call.
