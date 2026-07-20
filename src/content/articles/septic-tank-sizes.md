@@ -1,6 +1,6 @@
 ---
 title: "Septic Tank Sizes: What Size Tank Your House Needs"
-description: ""
+description: "Septic tank size is set primarily by bedroom count, since bedrooms are used as a proxy for how many people live in the house and how much wastewater it"
 keyword: "septic tank sizes"
 publishDate: 2026-07-17
 ---

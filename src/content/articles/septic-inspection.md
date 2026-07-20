@@ -1,6 +1,6 @@
 ---
 title: "Septic Inspection: What It Costs and What Gets Checked"
-description: ""
+description: "A septic inspection is a professional check of your tank, baffles, effluent filter, and drain field to confirm the system is working and catch problems"
 keyword: "septic inspection"
 publishDate: 2026-07-17
 ---

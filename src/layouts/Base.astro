@@ -71,7 +71,7 @@ const ga4 = (site.ga4 && site.ga4.measurementId) || '';
     </div>
   )}
 
-  <script>
+  <script is:inline>
     // ---- Cookie consent (interim). Mediavine's CMP replaces this at Journey approval. ----
     const banner = document.getElementById('cookie-banner');
     if (banner) {
@@ -132,7 +132,25 @@ const ga4 = (site.ga4 && site.ga4.measurementId) || '';
     });
   </script>
 
+
+  <script is:inline>
+    (function () {
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest('a.ad-filled, aside.offer-box a');
+        if (!el) return;
+        if (typeof gtag !== 'function') return;
+        var slot = el.closest('aside.offer-box') ? 'offer_box' : 'banner';
+        gtag('event', 'offer_click', {
+          site: window.location.hostname,
+          slot: slot,
+          target_url: el.href,
+          page: window.location.pathname
+        });
+      }, true);
+    })();
+  </script>
   <style is:global>
+    .cookie-banner[hidden] { display: none; }
     .cookie-banner {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
       display: flex; flex-wrap: wrap; gap: 12px 24px;

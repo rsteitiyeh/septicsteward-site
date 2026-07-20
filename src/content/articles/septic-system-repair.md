@@ -1,6 +1,6 @@
 ---
 title: "Septic System Repair: Common Failures and Real Costs"
-description: ""
+description: "Septic system repair typically costs $600 to $6,000, with most individual fixes, a cracked lid, a bad baffle, a clogged filter, landing well under $1,000,"
 keyword: "septic system repair"
 publishDate: 2026-07-17
 ---

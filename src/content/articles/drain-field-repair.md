@@ -1,6 +1,6 @@
 ---
 title: "Drain Field Repair: Signs, Causes, and Real Costs"
-description: ""
+description: "A failing drain field shows up as soggy ground over the trench lines, a sewage smell in the yard, and slow drains in every fixture at once."
 keyword: "drain field repair"
 publishDate: 2026-07-17
 ---

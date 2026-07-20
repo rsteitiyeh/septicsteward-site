@@ -1,6 +1,6 @@
 ---
 title: "Septic Tank Filter: What It Does and Why It Needs Cleaning"
-description: ""
+description: "A septic tank filter, also called an effluent filter, sits in the outlet baffle and strains solid particles out of the wastewater before it leaves the tank"
 keyword: "septic tank filter"
 publishDate: 2026-07-17
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Septic Tank Riser Kit: Cost, Types, and Why It Pays Off"
-description: ""
+description: "A septic tank riser kit is a cylindrical extension, plastic or concrete, that raises your tank's access point from below the soil up to ground level, so a"
 keyword: "septic tank riser kit"
 publishDate: 2026-07-17
 ---
