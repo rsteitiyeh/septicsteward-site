@@ -7,9 +7,26 @@ const articles = (await getCollection('articles', ({ data }) => !data.draft))
   .sort((a, b) => +b.data.publishDate - +a.data.publishDate);
 const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
-<Base title={`Guides | ${site.BRAND}`} description={`All guides from ${site.BRAND}.`}>
+<Base title={`Articles | ${site.BRAND}`} description={`All articles from ${site.BRAND}.`}>
+<header class="nav">
+    <a class="brand" href="/">
+      <svg width="32" height="32" viewBox="0 0 38 38" aria-hidden="true">
+        <rect x="4" y="10" width="30" height="22" rx="4" fill="none" stroke="#2F4A2E" stroke-width="2"/>
+        <path d="M4 20 h30" stroke="#8FA07B" stroke-width="2"/>
+        <path d="M4 26 h30" stroke="#C96F3B" stroke-width="2"/>
+        <rect x="12" y="4" width="5" height="7" rx="1.5" fill="#5C4433"/>
+        <rect x="21" y="4" width="5" height="7" rx="1.5" fill="#5C4433"/>
+      </svg>
+      <span class="brand-word">Septic<b>Steward</b></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="/#how">How It Works</a><a href="/#calculator">Calculator</a><a href="/guides/">Articles</a><a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn sm" href="/#hero-form">Free Schedule</a>
+  </header>
+<div class="ad">Advertisement</div>
   <main class="guides">
-    <h1>Guides</h1>
+    <h1>Articles</h1>
     <ul>
       {articles.map((a) => (
         <li>
@@ -19,8 +36,21 @@ const fmt = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month:
         </li>
       ))}
     </ul>
-    {articles.length === 0 && <p>Guides are coming soon.</p>}
+    {articles.length === 0 && <p>Articles are coming soon.</p>}
   </main>
+<div class="ad">Advertisement</div>
+<footer>
+    <a class="brand" href="/">
+      <svg width="24" height="24" viewBox="0 0 38 38" aria-hidden="true">
+        <rect x="4" y="10" width="30" height="22" rx="4" fill="none" stroke="#F5EFDF" stroke-width="2"/>
+        <path d="M4 20 h30" stroke="#8FA07B" stroke-width="2"/><path d="M4 26 h30" stroke="#C96F3B" stroke-width="2"/>
+      </svg>
+      <span class="brand-word sm">Septic<b>Steward</b></span>
+    </a>
+    <nav><a href="/guides/">Articles</a><a href="/#calculator">Calculator</a><a href="/#handbook">Handbook</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclosure/">Disclosure</a><a href="/editorial/">Editorial</a></nav>
+    <p>Some links on this site are <a href="/disclosure/">affiliate links</a>. If you click through and make a purchase, we may earn a commission at no additional cost to you. This helps keep our guides free.</p>
+    <small>© 2026 SepticSteward. Educational information only — not professional engineering or septic advice.</small>
+  </footer>
 </Base>
 
 <style>
