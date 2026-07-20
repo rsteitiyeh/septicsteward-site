@@ -74,5 +74,3 @@ Largely, yes. The EPA attributes most septic failures to skipped maintenance rat
 ## Bottom line
 
 Septic system repair costs run from a $150 lid fix to a $20,000 drain field rebuild, and the EPA's own data points to the same conclusion every cost survey does: the repairs that cost the most are almost always the ones that started as a skipped pump-out. Diagnose before you pay for a fix, replace isolated parts instead of the whole system when you can, and treat a repeat repair on the same component as a sign to look harder at the cause.
-
-Written by the SepticSteward team. Updated July 15, 2026.

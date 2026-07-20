@@ -75,5 +75,3 @@ Yes, in many cases. The filter can be lifted out through the tank access and rin
 ## Bottom line
 
 A septic tank filter is a small, inexpensive part doing an outsized job: keeping solids out of a drain field that costs thousands of dollars to repair or replace. Clean or check it at every pump-out, more often for a larger household, and treat a $200 to $300 replacement as cheap insurance against a repair bill with a lot more zeros.
-
-Written by the SepticSteward team. Updated July 15, 2026.

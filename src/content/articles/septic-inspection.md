@@ -69,5 +69,3 @@ No. Pumping empties the tank. An inspection evaluates the whole system's conditi
 ## Bottom line
 
 A septic inspection costs $150 for a routine check and up to $650 for a full real estate-transaction visit, and the two aren't interchangeable with a pumping appointment. Stick to the EPA's 1-to-3-year inspection cycle for a conventional system, go annual if you have an alternative system with mechanical parts, and always budget for a full inspection with a written report before buying or selling a home with a septic system.
-
-Written by the SepticSteward team. Updated July 15, 2026.

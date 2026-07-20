@@ -83,5 +83,3 @@ Usually not. Standard policies exclude failures caused by age, wear, or lack of 
 ## Bottom line
 
 A drain field rarely fails without warning. Catching the signs early, soggy ground, odor, and slow drains together, and getting a real diagnosis before paying for repeat repairs, is what turns a $300 jetting job into the fix instead of the first of several failed attempts. Stick to the EPA's inspection and pumping schedule afterward, because that's the cheapest insurance the field will ever get.
-
-Written by the SepticSteward team. Updated July 15, 2026.

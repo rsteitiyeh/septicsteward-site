@@ -1,5 +1,3 @@
-# Crawl allowed ON PURPOSE while in stealth: pages carry <meta robots noindex>.
-# A hard Disallow would let bare URLs index. Sitemap withheld until un-stealth.
 # v1.2 (ARTICLE-GUIDELINES 17): search/citation bots explicitly allowed - the
 # eligibility switch for AI-answer citations. Default: allow all reputable bots.
 
@@ -20,3 +18,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://septicsteward.com/sitemap-index.xml

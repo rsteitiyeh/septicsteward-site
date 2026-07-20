@@ -69,5 +69,3 @@ In many state codes, yes. A whirlpool bath commonly adds a fixed increment, ofte
 ## Bottom line
 
 Septic tank size starts with a bedroom-based minimum, 1,000 gallons for three bedrooms or fewer with roughly 250 gallons added per bedroom above that, but the real target is matching tank capacity to actual daily wastewater flow. Confirm your exact requirement with your state or county health department, account for large fixtures like a whirlpool tub, and revisit sizing if your household has grown since the tank went in.
-
-Written by the SepticSteward team. Updated July 15, 2026.

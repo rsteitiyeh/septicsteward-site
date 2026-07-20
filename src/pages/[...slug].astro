@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Article from '../layouts/Article.astro';
+import site from '../../site.config.json';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
@@ -21,5 +22,22 @@ const related = all
   .map((a) => ({ title: a.data.title, slug: a.id, description: a.data.description }));
 ---
 <Article entry={entry} related={related}>
+  <Fragment slot="site-header">
+    <header class="simple-nav">
+      <a class="simple-brand" href="/">SepticSteward</a>
+      <nav aria-label="Main navigation">
+        <a href="/guides/">Guides</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+  </Fragment>
   <Content />
+  <Fragment slot="site-footer">
+    <footer class="simple-footer">
+      <a class="simple-brand" href="/">SepticSteward</a>
+      <nav><a href="/guides/">Guides</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclosure/">Disclosure</a><a href="/editorial/">Editorial</a></nav>
+      <small>&copy; 2026 {site.BRAND}</small>
+    </footer>
+  </Fragment>
 </Article>

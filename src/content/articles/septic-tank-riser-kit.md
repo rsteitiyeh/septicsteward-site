@@ -72,5 +72,3 @@ Riser kits commonly come in 16, 20, and 24-inch diameters, matched to your tank'
 ## Bottom line
 
 A septic tank riser kit costs $100 to $600 depending on whether you install it yourself or hire it out, and it typically pays for itself within two or three pump-out visits by eliminating the digging fee a buried lid adds every time. For a tank on a normal maintenance schedule, it's one of the few home-service upgrades that reliably saves more than it costs.
-
-Written by the SepticSteward team. Updated July 15, 2026.

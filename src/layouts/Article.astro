@@ -94,4 +94,12 @@ const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long
   .cta-card .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; color: #fff; background: var(--accent, #0E5C4A); font-weight: 700; text-decoration: none; }
   .related ul { list-style: none; padding: 0; }
   .related li { margin: 12px 0; }
+
+  .simple-nav { display: flex; align-items: center; gap: 24px; padding: 16px max(24px,calc((100% - 1160px)/2)); border-bottom: 1px solid #e5e5e5; }
+  .simple-nav .simple-brand { font-weight: 700; font-size: 18px; margin-right: auto; }
+  .simple-nav nav { display: flex; gap: 18px; font-size: 14px; }
+  .simple-footer { padding: 32px max(24px,calc((100% - 1160px)/2)) 48px; border-top: 1px solid #e5e5e5; margin-top: 40px; }
+  .simple-footer .simple-brand { font-weight: 700; font-size: 16px; display: block; margin-bottom: 12px; }
+  .simple-footer nav { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; margin-bottom: 12px; }
+  .simple-footer small { opacity: .7; font-size: 12px; }
 </style>

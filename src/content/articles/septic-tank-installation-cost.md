@@ -90,8 +90,6 @@ Usually, since bedroom count typically sets the minimum tank size under most cod
 
 Septic tank installation cost isn't random. Soil conditions and system type explain most of the spread between a $4,000 job and a $20,000 one, with tank size, permits, and regional labor rates filling in the rest. Get quotes that specify system type and size, confirm what's included, and use the required soil test (not the sticker price) to judge whether a bid is reasonable for your lot.
 
-Written by the SepticSteward team. We research septic costs and systems using EPA guidance, state health department data, and current contractor pricing, and we update this page when the underlying numbers change.
-
 <!-- humanizer pass notes (QA only, not for publication):
 tells found in draft 1: over-hedged "it depends" framing without naming the variable; a stray "at the end of the day" closer; one instance of "boasts" describing aerobic systems; uniform 3-sentence paragraph rhythm throughout.
 fixes: replaced vague hedges with the specific soil/system variable each time; cut the closer and ended on the soil-test recommendation instead; replaced "boasts" with plain "uses an aerator"; varied paragraph length and added one short single-sentence paragraph and one operator aside ("We've seen homeowners assume...").
