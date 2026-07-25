@@ -87,7 +87,7 @@ const showModes = cfg.mode === 'both';
     if (!$('flash-panel') || $('flash-panel').hidden) return;
     const q = pool[fi % pool.length];
     $('flash-q').textContent = q.q;
-    $('flash-a').textContent = q.options[q.answer] + (q.explanation ? ' — ' + q.explanation : '');
+    $('flash-a').textContent = q.options[q.answer] + (q.explanation ? '. ' + q.explanation : '');
     $('flash-a').hidden = true; $('flash-q').hidden = false; flipped = false;
     $('flash-progress').textContent = `Card ${ (fi % pool.length) + 1 } of ${pool.length} · ${flashKnown} known`;
   };
@@ -126,7 +126,7 @@ const showModes = cfg.mode === 'both';
     if (qi >= pool.length) {
       $('qz-summary').hidden = false;
       $('qz-score').textContent = `${score} / ${pool.length}`;
-      $('qz-verdict').textContent = score >= Math.ceil(pool.length * 0.6) ? 'Nice — keep drilling until it feels easy.' : 'Keep practicing — every miss above shows the right answer.';
+      $('qz-verdict').textContent = score >= Math.ceil(pool.length * 0.6) ? 'Nice. Keep drilling until it feels easy.' : 'Keep practicing. Every miss above shows the right answer.';
       $('qz-bar-fill').style.width = '100%';
     } else qzRender();
   });

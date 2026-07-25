@@ -25,9 +25,9 @@ import Tool from './Tool.astro';
         { '@type': 'Question', name: 'How often should a septic tank be pumped?', acceptedAnswer: { '@type': 'Answer', text: 'The U.S. EPA advises homeowners to have a typical household septic system inspected about every three years and the tank pumped every three to five years, depending on household size, tank size, and water use. Use the calculator on this page for an estimate specific to your system.' } },
         { '@type': 'Question', name: 'How much does septic tank pumping cost?', acceptedAnswer: { '@type': 'Answer', text: 'Pump-out cost varies widely by region, tank size, and access. It is a modest, planned expense compared with repairing or replacing a failed drain field. Use the calculator on this page for an estimated regional range.' } },
         { '@type': 'Question', name: 'Can I flush flushable wipes with a septic system?', acceptedAnswer: { '@type': 'Answer', text: 'No. Despite the label, so-called flushable wipes do not break down like toilet paper and can build up in the tank and clog pipes and baffles. Only human waste and toilet paper should be flushed on a septic system.' } },
-        { '@type': 'Question', name: 'Do septic additives work?', acceptedAnswer: { '@type': 'Answer', text: 'A healthy septic tank already contains the bacteria it needs. Regular pumping and sensible water use — not additives — are what keep a system working, and some additives can even harm the system.' } },
+        { '@type': 'Question', name: 'Do septic additives work?', acceptedAnswer: { '@type': 'Answer', text: 'A healthy septic tank already contains the bacteria it needs. Regular pumping and sensible water use, not additives, are what keep a system working, and some additives can even harm the system.' } },
         { '@type': 'Question', name: 'What are the signs my septic tank is full or failing?', acceptedAnswer: { '@type': 'Answer', text: 'Common warning signs include slow drains throughout the house, gurgling plumbing, sewage odors, and unusually lush or wet patches over the drain field. A backup into the house is often the clearest warning.' } },
-        { '@type': 'Question', name: 'Is the pumping calculator accurate?', acceptedAnswer: { '@type': 'Answer', text: "The calculator gives an educational estimate based on household size, tank size, and disposal use. It is a starting point, not a professional assessment — always confirm with an inspection." } }
+        { '@type': 'Question', name: 'Is the pumping calculator accurate?', acceptedAnswer: { '@type': 'Answer', text: "The calculator gives an educational estimate based on household size, tank size, and disposal use. It is a starting point, not a professional assessment. Always confirm with an inspection." } }
       ]
     })} />
   </Fragment>
@@ -57,7 +57,7 @@ import Tool from './Tool.astro';
       <div class="hero-copy">
         <p class="eyebrow">Free homeowner guides · EPA-informed</p>
         <h1>Your Septic System Doesn't Have to Be a Mystery.</h1>
-        <p class="lede">Plain-English maintenance schedules, pump-out timing, and what-not-to-flush guides for homeowners — free.</p>
+        <p class="lede">Plain-English maintenance schedules, pump-out timing, and what-not-to-flush guides for homeowners, free.</p>
         <form class="email" id="hero-form" data-subscribe method="post">
           <label class="sr" for="hero-email">Email address</label>
           <input id="hero-email" name="fields[email]" type="email" required placeholder="you@email.com" />
@@ -86,14 +86,14 @@ import Tool from './Tool.astro';
             <text x="150" y="228" fill="#f5efdf">sludge layer</text>
           </g>
         </svg>
-        <figcaption>A working tank separates waste into layers — only the clarified middle layer is meant to move on to the drain field.</figcaption>
+        <figcaption>A working tank separates waste into layers: only the clarified middle layer is meant to move on to the drain field.</figcaption>
       </figure>
     </section>
 
     <section class="trust">
       <div class="trust-grid">
         <div><h3>Written for homeowners</h3><p>Not for contractors. No jargon you need a license to understand.</p></div>
-        <div><h3>Based on EPA &amp; extension guidance</h3><p>We point to SepticSmart and state extension offices — not to whoever's paying.</p></div>
+        <div><h3>Based on EPA &amp; extension guidance</h3><p>We point to SepticSmart and state extension offices, not to whoever's paying.</p></div>
         <div><h3>No sales calls, ever</h3><p>We don't book jobs or resell your info. Just the guides and the tools.</p></div>
       </div>
     </section>
@@ -102,11 +102,11 @@ import Tool from './Tool.astro';
     <section id="how" class="section problem">
       <p class="eyebrow">Why maintenance matters</p>
       <h2>A Neglected Tank Is a Quiet, Expensive Problem.</h2>
-      <p>Your septic tank works by letting solids settle. Grease and light material float up into the <b>scum layer</b>; heavier solids sink into the <b>sludge layer</b>; only the clarified middle — the <b>effluent</b> — should ever leave the tank for the <b>drain field</b>.</p>
+      <p>Your septic tank works by letting solids settle. Grease and light material float up into the <b>scum layer</b>; heavier solids sink into the <b>sludge layer</b>; only the clarified middle, the <b>effluent</b> , should ever leave the tank for the <b>drain field</b>.</p>
       <p>Skip pump-outs for too long and that sludge builds until solids start pushing past the <b>baffle</b> and into the drain field. Once the drain field clogs, you're into repair or replacement territory, and a <b>backup</b> into the house is often the first warning.</p>
       <div class="callout">
         <p>The EPA advises homeowners to have a typical system <b>inspected about every three years</b> and the tank <b>pumped every three to five years</b>, depending on household size, tank size, and use.</p>
-        <span class="src">Source: U.S. EPA SepticSmart. A routine pump-out is a modest, planned cost — a failed drain field is generally far more expensive. Use the calculator below for an estimate rather than treating any single number as a fact.</span>
+        <span class="src">Source: U.S. EPA SepticSmart. A routine pump-out is a modest, planned cost. A failed drain field is generally far more expensive. Use the calculator below for an estimate rather than treating any single number as a fact.</span>
       </div>
     </section>
 
@@ -120,7 +120,7 @@ import Tool from './Tool.astro';
           <input id="magnet-email" name="fields[email]" type="email" required placeholder="you@email.com" />
           <button>Send the Schedule</button>
         </form>
-        <p class="micro"><b>Instant download link.</b> No spam, no sales calls — unsubscribe anytime.</p>
+        <p class="micro"><b>Instant download link.</b> No spam, no sales calls, unsubscribe anytime.</p>
       </div>
     </section>
 
@@ -139,7 +139,7 @@ import Tool from './Tool.astro';
             <li><span class="check">✓</span><span>Troubleshooting flowcharts for backups, odors &amp; slow drains</span></li>
             <li><span class="check">✓</span><span>The exact questions to ask a pump-out contractor</span></li>
             <li><span class="check">✓</span><span>Inspection checklists you can hand to a pro</span></li>
-            <li><span class="check">✓</span><span>The additive truth guide — what actually helps</span></li>
+            <li><span class="check">✓</span><span>The additive truth guide: what actually helps</span></li>
           </ul>
           <form class="email compact" data-subscribe method="post">
             <label class="sr" for="handbook-email">Email address</label>
@@ -156,7 +156,7 @@ import Tool from './Tool.astro';
       <h2>Pumping Frequency &amp; Cost Calculator</h2>
       <p class="section-lede">Answer three questions for an estimated pump-out interval and cost range for a system like yours.</p>
       <Tool />
-      <p class="calc-note">Estimates are a starting point, not a professional assessment. Tank condition, water use, and local rules matter — confirm timing with an inspection.</p>
+      <p class="calc-note">Estimates are a starting point, not a professional assessment. Tank condition, water use, and local rules matter. Confirm timing with an inspection.</p>
     </section>
     <a href="https://463e8mzkvzo7pqjhm71guw2p8d.hop.clickbank.net/?tid=septic_banner" rel="sponsored nofollow noopener" target="_blank" class="ad ad-filled" style="display:flex;flex-direction:column;align-items:center;gap:4px;width:min(970px,calc(100% - 32px));margin:27px auto;text-decoration:none"><span style="font:700 9px ui-monospace,monospace;letter-spacing:1.6px;text-transform:uppercase;opacity:.55;color:inherit">Sponsored</span><img src="/images/cb-teds-728x90.gif" width="728" height="90" alt="TedsWoodworking 16,000 project plans" loading="lazy" style="max-width:100%;height:auto;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.12)"></a>
 
@@ -164,7 +164,7 @@ import Tool from './Tool.astro';
       <div>
         <p class="eyebrow">Who's Behind SepticSteward</p>
         <h2>{site.author.name}</h2>
-        <p>Our guidance is drawn from public, non-commercial sources — the U.S. EPA's <b>SepticSmart</b> program and <b>state cooperative extension offices</b> — written to be understood by homeowners, not sold by contractors.</p>
+        <p>Our guidance is drawn from public, non-commercial sources: the U.S. EPA's <b>SepticSmart</b> program and <b>state cooperative extension offices</b> : written to be understood by homeowners, not sold by contractors.</p>
         <p>{site.author.bio}</p>
       </div>
     </section>
@@ -173,18 +173,18 @@ import Tool from './Tool.astro';
       <p class="eyebrow">Straight answers</p>
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
-        <details open><summary>How often should a septic tank be pumped?<span>+</span></summary><p>The U.S. EPA advises inspecting a typical household system about every three years and pumping the tank every three to five years — sooner for larger households or heavy use. The calculator above estimates a range for your system.</p></details>
-        <details><summary>How much does septic tank pumping cost?<span>+</span></summary><p>It varies widely by region, tank size, and access — so we won't quote one figure as fact. A routine pump-out is a modest, planned expense; a failed drain field is far costlier. Use the calculator for an estimated regional range.</p></details>
+        <details open><summary>How often should a septic tank be pumped?<span>+</span></summary><p>The U.S. EPA advises inspecting a typical household system about every three years and pumping the tank every three to five years, sooner for larger households or heavy use. The calculator above estimates a range for your system.</p></details>
+        <details><summary>How much does septic tank pumping cost?<span>+</span></summary><p>It varies widely by region, tank size, and access, so we won't quote one figure as fact. A routine pump-out is a modest, planned expense; a failed drain field is far costlier. Use the calculator for an estimated regional range.</p></details>
         <details><summary>Can I flush "flushable" wipes?<span>+</span></summary><p>No. Despite the label, they don't break down like toilet paper and can accumulate in the tank and snag on baffles. Only human waste and toilet paper should go down the toilet.</p></details>
-        <details><summary>Do septic additives work?<span>+</span></summary><p>A healthy tank already grows the bacteria it needs. Regular pumping and sensible water use — not additives — keep a system working, and some additives can even do harm.</p></details>
+        <details><summary>Do septic additives work?<span>+</span></summary><p>A healthy tank already grows the bacteria it needs. Regular pumping and sensible water use, not additives, keep a system working, and some additives can even do harm.</p></details>
         <details><summary>What are the signs my tank is full?<span>+</span></summary><p>Slow drains across the house, gurgling pipes, sewage odors, and soggy or unusually green patches over the drain field are common signals. A backup indoors is the loudest warning.</p></details>
-        <details><summary>Is the calculator accurate?<span>+</span></summary><p>It's an educational estimate, not a professional assessment. It weighs household size, tank size, and disposal use — but your tank's real condition and local rates decide the final answer.</p></details>
+        <details><summary>Is the calculator accurate?<span>+</span></summary><p>It's an educational estimate, not a professional assessment. It weighs household size, tank size, and disposal use, but your tank's real condition and local rates decide the final answer.</p></details>
       </div>
     </section>
 
     <section class="final soil">
       <h2>Start with the free schedule.</h2>
-      <p>Join homeowners keeping their systems healthy the easy way — one email, one printable schedule, zero sales pressure.</p>
+      <p>Join homeowners keeping their systems healthy the easy way: one email, one printable schedule, zero sales pressure.</p>
       <form class="email center" data-subscribe method="post">
         <label class="sr" for="final-email">Email address</label>
         <input id="final-email" name="fields[email]" type="email" required placeholder="you@email.com" />
@@ -204,7 +204,7 @@ import Tool from './Tool.astro';
     </a>
     <nav><a href="/guides/">Articles</a><a href="#calculator">Calculator</a><a href="#handbook">Handbook</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/disclosure/">Disclosure</a><a href="/editorial/">Editorial</a></nav>
     <p>Some links on this site are <a href="/disclosure/">affiliate links</a>. If you click through and make a purchase, we may earn a commission at no additional cost to you. This helps keep our guides free.</p>
-    <small>© 2026 SepticSteward. Educational information only — not professional engineering or septic advice.</small>
+    <small>© 2026 SepticSteward. Educational information only, not professional engineering or septic advice.</small>
   </footer>
 </Base>
 

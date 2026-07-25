@@ -18,7 +18,7 @@ import Page from '../layouts/Page.astro';
       <label for="cf-topic">What's this about?</label>
       <select id="cf-topic" name="topic">
         <option value="general">General question</option>
-        <option value="correction">A correction — something here is wrong</option>
+        <option value="correction">A correction: something here is wrong</option>
         <option value="data">My data (access or deletion)</option>
       </select>
     </p>
@@ -38,7 +38,7 @@ import Page from '../layouts/Page.astro';
   <p>Spotted something wrong or out of date? Tell us. We take corrections seriously, check them against the source, and update the page with a visible updated date. If you can point us at the source, even better.</p>
 
   <h2>Your data</h2>
-  <p>Want to know what we hold about you, or want it deleted? Send it through the form above — pick "My data" — and we'll take care of it. See our <a href="/privacy/">privacy policy</a>.</p>
+  <p>Want to know what we hold about you, or want it deleted? Send it through the form above, pick "My data", and we'll take care of it. See our <a href="/privacy/">privacy policy</a>.</p>
 </Page>
 
 <style>
@@ -75,7 +75,7 @@ import Page from '../layouts/Page.astro';
 
     // No-JS fallback lands back here with a flag.
     var qs = new URLSearchParams(location.search);
-    if (qs.get('sent')) { statusEl.className = 'ok'; statusEl.textContent = 'Thanks — your message is with us.'; }
+    if (qs.get('sent')) { statusEl.className = 'ok'; statusEl.textContent = 'Thanks. Your message is with us.'; }
     if (qs.get('error')) { statusEl.className = 'bad'; statusEl.textContent = "That didn't send. Check your email address and try again."; }
 
     form.addEventListener('submit', function (e) {
@@ -96,17 +96,17 @@ import Page from '../layouts/Page.astro';
           if (d && d.ok) {
             form.reset();
             statusEl.className = 'ok';
-            statusEl.textContent = 'Thanks — your message is with us. We usually reply within a few business days.';
+            statusEl.textContent = 'Thanks. Your message is with us. We usually reply within a few business days.';
           } else {
             statusEl.className = 'bad';
             statusEl.textContent = (d && d.error === 'invalid email')
-              ? 'That email address does not look right — check it and try again.'
+              ? 'That email address does not look right. Check it and try again.'
               : "That didn't send. Please try again in a moment.";
           }
         })
         .catch(function () {
           statusEl.className = 'bad';
-          statusEl.textContent = "That didn't send — you may be offline. Please try again.";
+          statusEl.textContent = "That didn't send. You may be offline. Please try again.";
         })
         .finally(function () { btn.disabled = false; });
     });
