@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Article from '../layouts/Article.astro';
 import site from '../../site.config.json';
+import { tokens, overlap } from '../lib/seo.mjs';
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
@@ -14,12 +15,31 @@ export async function getStaticPaths() {
 const { entry, all } = Astro.props;
 const { Content } = await render(entry);
 
-// naive related: 3 most recent others (bank-driven relatedness can come later)
-const related = all
+// Topical related links, scored by token overlap.
+// The old rule was "3 most recent", which silently degenerates to alphabetical
+// whenever publishDates tie (bulk-published sites) because the sort is stable
+// and getCollection() returns filesystem order. Never select alphabetically.
+const me = {
+  kw: tokens(entry.data.keyword || entry.data.title),
+  ti: tokens(entry.data.title),
+  de: tokens(entry.data.description)
+};
+const scoreRelated = (a) =>
+  3 * overlap(me.kw, tokens(a.data.keyword || a.data.title)) +
+  2 * overlap(me.ti, tokens(a.data.title)) +
+  1 * overlap(me.de, tokens(a.data.description));
+
+const scored = all
   .filter((a) => a.id !== entry.id)
-  .sort((a, b) => +b.data.publishDate - +a.data.publishDate)
+  .map((a) => ({ a, s: scoreRelated(a) }))
+  .sort((x, y) =>
+    y.s - x.s ||                                        // relevance first
+    (+y.a.data.publishDate - +x.a.data.publishDate) ||  // then recency
+    x.a.id.localeCompare(y.a.id));                      // deterministic tiebreak
+
+const related = (scored.some((x) => x.s > 0) ? scored : scored.slice())
   .slice(0, 3)
-  .map((a) => ({ title: a.data.title, slug: a.id, description: a.data.description }));
+  .map(({ a }) => ({ title: a.data.title, slug: a.id, description: a.data.description }));
 ---
 <Article entry={entry} related={related}>
   <Fragment slot="site-header">

@@ -1,14 +1,17 @@
 ---
 import site from '../../site.config.json';
+import SeoHead from '../components/SeoHead.astro';
 interface Props {
   title: string;
   description?: string;
   /** force noindex even post-stealth (e.g. 404, guides while thin) */
   noindex?: boolean;
   ogType?: string;
+  /** per-page social card, e.g. an article hero image */
+  ogImage?: string;
 }
-const { title, description = '', noindex = false, ogType = 'website' } = Astro.props;
-const robots = site.stealth || noindex ? 'noindex, nofollow' : 'index, follow';
+const { title, description = '', noindex = false, ogType = 'website', ogImage } = Astro.props;
+const robots = site.stealth || noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 const canonical = new URL(Astro.url.pathname, site.SITE).href;
 const ga4 = (site.ga4 && site.ga4.measurementId) || '';
 ---
@@ -25,6 +28,7 @@ const ga4 = (site.ga4 && site.ga4.measurementId) || '';
   {description && <meta property="og:description" content={description} />}
   <meta property="og:type" content={ogType} />
   <meta property="og:url" content={canonical} />
+  <SeoHead title={title} description={description} ogImage={ogImage} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />

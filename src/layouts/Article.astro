@@ -2,6 +2,8 @@
 import Base from './Base.astro';
 import site from '../../site.config.json';
 import { extractFaq } from '../lib/faq.mjs';
+import { organization, breadcrumb, orgId } from '../lib/seo.mjs';
+import heroes from '../lib/article-images.json';
 
 interface Props {
   entry: any;        // content collection entry
@@ -14,13 +16,20 @@ const authorName = author ?? site.author.name;
 const canonical = new URL(`/${entry.id}/`, site.SITE).href;
 
 const faqs = extractFaq(entry.body);
+const hero = heroes[entry.id] || null;
 const graph = [];
+graph.push(organization(site));
+graph.push(breadcrumb(site, [
+  { name: 'Home', path: '/' },
+  { name: 'Guides', path: '/guides/' },
+  { name: title }
+]));
 graph.push({
   '@type': 'Article',
   headline: title,
   description,
   author: { '@type': 'Organization', name: authorName, url: site.SITE },
-  publisher: { '@type': 'Organization', name: site.BRAND },
+  publisher: { '@id': orgId(site) },
   datePublished: publishDate.toISOString().slice(0, 10),
   dateModified: updated.toISOString().slice(0, 10),
   mainEntityOfPage: canonical
@@ -38,7 +47,7 @@ if (faqs.length) {
 const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
-<Base title={`${title} | ${site.BRAND}`} description={description} ogType="article">
+<Base title={`${title} | ${site.BRAND}`} description={description} ogType="article" ogImage={hero}>
   <script type="application/ld+json" set:html={jsonld} slot="head" />
   <header class="nav">
     <a class="brand" href="/">
@@ -77,6 +86,18 @@ const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long
           <a class="btn" href="/#tool">Open the free tool</a>
         </slot>
       </aside>
+      <aside class="article-capture">
+        <p class="ac-kicker">Free download</p>
+        <p class="ac-lead">{site.comingSoon?.captureLabel || 'Get the free guide'}</p>
+        <form class="ac-form" method="post" action="/api/subscribe" data-article-capture>
+          <label class="sr" for="ac-email">Email address</label>
+          <input id="ac-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
+          <button type="submit">{site.comingSoon?.captureLabel || 'Send it to me'}</button>
+        </form>
+        <p class="ac-micro">No spam, no sales calls, unsubscribe anytime.</p>
+        <p class="ac-done" hidden>{site.magnet?.doneMessage || 'Check your inbox.'}</p>
+      </aside>
+
       {related.length > 0 && (
         <section class="related">
           <h2>Related guides</h2>
@@ -93,6 +114,35 @@ const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long
 <a href="https://463e8mzkvzo7pqjhm71guw2p8d.hop.clickbank.net/?tid=septic_banner" rel="sponsored nofollow noopener" target="_blank" class="ad ad-filled" style="display:flex;flex-direction:column;align-items:center;gap:4px;width:min(970px,calc(100% - 32px));margin:27px auto;text-decoration:none"><span style="font:700 9px ui-monospace,monospace;letter-spacing:1.6px;text-transform:uppercase;opacity:.55;color:inherit">Sponsored</span><img src="/images/cb-teds-728x90.gif" width="728" height="90" alt="TedsWoodworking 16,000 project plans" loading="lazy" style="max-width:100%;height:auto;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.12)"></a>
 </aside>
 </article>
+  <script is:inline>
+    // Self-contained: does not depend on the homepage Landing script.
+    document.querySelectorAll('[data-article-capture]').forEach((f) => {
+      f.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const box = f.closest('.article-capture');
+        const email = f.querySelector('input[name=email]').value.trim();
+        if (!email) return;
+        const btn = f.querySelector('button');
+        btn.disabled = true;
+        try {
+          const r = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email })
+          });
+          const j = await r.json();
+          if (j && j.ok) {
+            f.hidden = true;
+            const done = box.querySelector('.ac-done');
+            if (done) done.hidden = false;
+            if (window.gtag) window.gtag('event', 'generate_lead', { method: 'article_capture' });
+            return;
+          }
+        } catch (err) {}
+        btn.disabled = false;
+      });
+    });
+  </script>
   </main>
   <footer>
     <a class="brand" href="/">
@@ -111,6 +161,20 @@ const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long
 <style is:global>
   .article-wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
   .breadcrumb { font-size: 13px; opacity: .75; margin-bottom: 24px; }
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .article-capture{margin:2.5rem 0;padding:1.4rem 1.5rem;border-radius:10px;
+    background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08)}
+  .ac-kicker{margin:0 0 .3rem;font:700 10px/1 ui-monospace,monospace;letter-spacing:.14em;
+    text-transform:uppercase;opacity:.6}
+  .ac-lead{margin:0 0 .9rem;font-weight:600;font-size:1.05rem}
+  .ac-form{display:flex;gap:.5rem;flex-wrap:wrap}
+  .ac-form input{flex:1 1 240px;padding:.7rem .9rem;border-radius:7px;
+    border:1px solid rgba(0,0,0,.2);font:inherit;font-size:.95rem;background:#fff;color:inherit}
+  .ac-form button{padding:.7rem 1.1rem;border-radius:7px;border:0;cursor:pointer;
+    font:inherit;font-weight:600;font-size:.95rem;background:currentColor}
+  .ac-form button::after{content:''}
+  .ac-micro{margin:.6rem 0 0;font-size:.8rem;opacity:.65}
+  .ac-done{margin:.6rem 0 0;font-weight:600}
   .article-head h1 { line-height: 1.15; margin: 0 0 8px; }
   .byline { font-size: 14px; opacity: .8; margin: 0 0 32px; }
   .prose h2 { margin-top: 2.2em; }

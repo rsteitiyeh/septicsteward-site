@@ -1,0 +1,33 @@
+---
+/**
+ * Everything the shared <head> was missing: social card, icons, manifest.
+ * Base.astro already emits title/description/canonical/robots/og:title/
+ * og:description/og:type/og:url - this component owns the rest, so the next
+ * SEO change is one file per repo instead of fifteen inline patches.
+ */
+import site from '../../site.config.json';
+import { absoluteImage } from '../lib/seo.mjs';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** per-page override, e.g. an article hero. Falls back to the site card. */
+  ogImage?: string;
+}
+const { title, description = '', ogImage } = Astro.props;
+const img = absoluteImage(site, ogImage);
+---
+<meta property="og:site_name" content={site.BRAND} />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content={img} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={title} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+{description && <meta name="twitter:description" content={description} />}
+<meta name="twitter:image" content={img} />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />

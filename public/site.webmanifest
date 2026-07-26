@@ -1,0 +1,20 @@
+{
+  "name": "SepticSteward",
+  "short_name": "SepticSteward",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "theme_color": "#2F4A2E",
+  "background_color": "#F5EFDF",
+  "display": "browser",
+  "start_url": "/"
+}

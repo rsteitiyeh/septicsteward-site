@@ -7,6 +7,7 @@
  * with a SepticSteward skin below.
  */
 import site from '../../site.config.json';
+import { organization, website } from '../lib/seo.mjs';
 import Base from '../layouts/Base.astro';
 import Tool from './Tool.astro';
 ---
@@ -18,6 +19,12 @@ import Tool from './Tool.astro';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- seo-org-block: entity anchor. Without an Organization node a search or
+         answer engine has no machine-readable identity for this brand at all. -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [organization(site), website(site)]
+    })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
