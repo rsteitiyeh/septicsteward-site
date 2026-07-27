@@ -1,6 +1,6 @@
 ---
 title: "Alternative Septic Systems: Types, Costs, and Uses"
-description: ""
+description: "Alternative septic systems like mound and aerobic units run $7,000 to $20,000 or more, double to triple a standard system."
 keyword: "alternative septic systems"
 publishDate: 2026-07-26
 ---

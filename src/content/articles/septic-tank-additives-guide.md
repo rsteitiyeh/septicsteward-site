@@ -1,6 +1,6 @@
 ---
 title: "Do Septic Tank Additives Actually Work? The Real Answer"
-description: ""
+description: "A 48 tank study and the EPA's 2024 review found no septic additive that improves tank performance, and some cause harm."
 keyword: "septic tank additives"
 publishDate: 2026-07-26
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Signs of Drain Field Failure Every Homeowner Should Know"
-description: ""
+description: "Slow drains and gurgling pipes are usually the earliest signs of drain field failure, per Washington state health guidance."
 keyword: "signs of drain field failure"
 publishDate: 2026-07-25
 ---

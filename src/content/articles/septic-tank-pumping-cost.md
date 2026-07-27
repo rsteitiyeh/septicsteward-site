@@ -1,6 +1,6 @@
 ---
 title: "Septic Tank Pumping Cost: What You'll Actually Pay"
-description: ""
+description: "Septic tank pumping costs $291 to $565 nationally, averaging $428, though access and your region can push it past $700."
 keyword: "septic tank pumping cost"
 publishDate: 2026-07-23
 ---

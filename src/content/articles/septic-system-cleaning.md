@@ -1,6 +1,6 @@
 ---
 title: "Septic System Cleaning: What's Included and What It Costs"
-description: ""
+description: "Septic cleaning adds a pressure rinse to a standard pump-out, typically running $450 to $800 versus $250 to $400 for pumping."
 keyword: "septic system cleaning"
 publishDate: 2026-07-22
 ---

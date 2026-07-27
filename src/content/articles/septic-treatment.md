@@ -1,6 +1,6 @@
 ---
 title: "Septic Treatment: What Actually Keeps a Tank Healthy"
-description: ""
+description: "Real septic treatment means scheduled pumping and mindful water use, not the bottled additives the EPA advises against."
 keyword: "septic treatment"
 publishDate: 2026-07-21
 ---

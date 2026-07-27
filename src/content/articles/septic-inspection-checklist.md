@@ -1,6 +1,6 @@
 ---
 title: "Septic Inspection Checklist: What to Check, Step by Step"
-description: ""
+description: "A full septic inspection runs through seven steps, from tank condition to drain field saturation, for about $250 to $500."
 keyword: "septic inspection checklist"
 publishDate: 2026-07-26
 ---
