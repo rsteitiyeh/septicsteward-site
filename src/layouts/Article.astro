@@ -47,7 +47,7 @@ if (faqs.length) {
 const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
-<Base title={`${title} | ${site.BRAND}`} description={description} ogType="article" ogImage={hero}>
+<Base title={title} description={description} ogType="article" ogImage={hero}>
   <script type="application/ld+json" set:html={jsonld} slot="head" />
   <header class="nav">
     <a class="brand" href="/">
@@ -94,7 +94,7 @@ const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long
           <input id="ac-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
           <button type="submit">{site.comingSoon?.captureLabel || 'Send it to me'}</button>
         </form>
-        <p class="ac-micro">No spam, no sales calls, unsubscribe anytime.</p>
+        <p class="ac-micro">We guarantee 100% privacy. Your information will not be shared.</p>
         <p class="ac-done" hidden>{site.magnet?.doneMessage || 'Check your inbox.'}</p>
       </aside>
 

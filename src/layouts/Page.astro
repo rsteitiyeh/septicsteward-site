@@ -6,7 +6,7 @@ interface Props { title: string; description?: string }
 const { title, description = '' } = Astro.props;
 const t = site.theme;
 ---
-<Base title={`${title} | ${site.BRAND}`} description={description}>
+<Base title={title} description={description}>
   <main class="page">
     <p class="page-brand"><a href="/">{site.BRAND}</a></p>
     <h1>{title}</h1>

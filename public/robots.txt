@@ -1,22 +1,107 @@
-# v1.2 (ARTICLE-GUIDELINES 17): search/citation bots explicitly allowed - the
-# eligibility switch for AI-answer citations. Default: allow all reputable bots.
+# robots.txt v2.0 - rebuilt 2026-07-27 from each vendor's own crawler docs.
+#
+# THE RULE THAT BREAKS MOST robots.txt FILES: per Google's spec, "User agent
+# specific groups and global groups (*) are not combined." Naming a bot below
+# means it STOPS reading the * group. If a path-level Disallow is ever added to
+# the * group, it MUST be duplicated into every named group here or it will not
+# apply to them.
+#
+# TRAINING vs RETRIEVAL: blocking a training crawler does NOT cost citations;
+# blocking a retrieval crawler DOES. Sources are named per group.
 
+# ============================================================
+# Default
+# ============================================================
+User-agent: *
+Allow: /
+
+# ============================================================
+# AI RETRIEVAL / CITATION - must be allowed to be cited
+# ============================================================
+
+# OpenAI: surfaces sites in ChatGPT search results
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: PerplexityBot
+# OpenAI: fetches the page live when a user asks
+User-agent: ChatGPT-User
 Allow: /
 
+# Anthropic: search index for Claude. Anthropic: blocking "may reduce your
+# site's visibility and accuracy in user search results."
 User-agent: Claude-SearchBot
 Allow: /
 
+# Anthropic: live retrieval at answer time. Blocking "prevents our system from
+# retrieving your content in response to a user query."
+User-agent: Claude-User
+Allow: /
+
+# Perplexity: "not used to crawl content for AI foundation models"
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google: AI Overviews and AI Mode are served from the Search index, so this is
+# the single most important line for Google AI citation.
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: *
+# Apple: powers Siri / Spotlight / Safari answers
+User-agent: Applebot
 Allow: /
+
+# Meta: "improve Meta AI search result quality"
+User-agent: meta-webindexer
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+# Amazon: "does not crawl content for generative AI model training"
+User-agent: Amzn-SearchBot
+Allow: /
+
+User-agent: Amzn-User
+Allow: /
+
+# ============================================================
+# TRAINING-ONLY - no documented citation benefit either way.
+# Allowed deliberately; this is an IP decision, not an SEO one.
+# ============================================================
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Gemini training AND grounding in Gemini Apps / Vertex AI. Does not affect
+# Google Search or AI Overviews. Allowed so Gemini apps can cite us.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Apple training opt-out. The one free one: Apple states Applebot-Extended
+# "does not crawl webpages" and blocked pages "can still be included in
+# search results", so this costs nothing.
+User-agent: Applebot-Extended
+Disallow: /
+
+# ============================================================
+# No citation pathway to any answer engine we care about
+# ============================================================
+User-agent: Bytespider
+Disallow: /
 
 Sitemap: https://septicsteward.com/sitemap-index.xml
