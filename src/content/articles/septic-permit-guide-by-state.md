@@ -1,6 +1,6 @@
 ---
 title: "Septic Tank Permit Requirements: What to Expect by State"
-description: ""
+description: "Nearly every state requires a septic tank permit, usually issued by the county or local health department rather than a single statewide agency."
 keyword: "septic tank permit requirements by state"
 publishDate: 2026-07-29
 ---
