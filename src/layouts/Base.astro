@@ -58,7 +58,7 @@ const ga4 = (site.ga4 && site.ga4.measurementId) || '';
     </Fragment>
   )}
 </head>
-<body>
+<body style={`background:${site.theme.bg};color:${site.theme.ink}`}>
   <slot />
 
   {ga4 && (
