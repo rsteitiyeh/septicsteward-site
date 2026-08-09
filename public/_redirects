@@ -1,0 +1,5 @@
+# CODEX-STANDARDS 2026-08-09 (X1 + X2). septicsteward.com = bare apex domain,
+# replaced at stamp time (e.g. dogdrills.com). CF Pages honors absolute-URL
+# host matching in _redirects.
+https://www.septicsteward.com/* https://septicsteward.com/:splat 301
+/sitemap.xml /sitemap-index.xml 301
