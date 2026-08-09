@@ -23,9 +23,6 @@ const homeGuides = (await getCollection('articles', ({ data }) => !data.draft))
   description="Plain-English septic maintenance schedules, pump-out timing, and a free pumping frequency &amp; cost calculator for homeowners."
 >
   <Fragment slot="head">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <!-- seo-org-block: entity anchor. Without an Organization node a search or
          answer engine has no machine-readable identity for this brand at all. -->
     <script type="application/ld+json" set:html={JSON.stringify({
