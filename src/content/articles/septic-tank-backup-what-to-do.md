@@ -54,5 +54,3 @@ Not if sewage is already backing up into the house; stop all water use until the
 
 **Can a septic backup damage my house?**
 Yes; standing sewage indoors can damage flooring, drywall, and subfloor, and it's a contamination risk that often requires professional cleanup, not just mopping. The longer sewage sits, the more it spreads into porous materials, so treat any indoor backup as urgent even if the volume seems small.
-
-<!-- QA tell-audit: checked for em/en dashes (none), banned AI vocabulary (none). Emergency content leads with the immediate action list before any explanation, per YMYL/safety requirement. Explicit "never enter/open the tank" warning present with a named source (U Minn) rather than a vague safety cliche. No dosing/clinical advice given beyond "this carries pathogens, treat as contaminated," which stops short of medical guidance. -->

@@ -67,5 +67,3 @@ No. Anaerobic systems have no mechanical components, so there's nothing to put u
 
 **How do I find out which system my property qualifies for?**
 Contact your local health or environmental department for a percolation test before you assume either system is available. Soil conditions, not preference, usually make this decision.
-
-<!-- QA tell-check: reviewed for em/en dashes (none), banned AI vocabulary (none), signposting phrases (none). Sentence rhythm varied intentionally; operator-voice asides retained ("shopping quotes from three licensed installers," "run your numbers"). -->

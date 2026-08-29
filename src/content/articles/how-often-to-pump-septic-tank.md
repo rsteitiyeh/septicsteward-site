@@ -62,5 +62,3 @@ It's mostly just wasted money rather than harmful, though disturbing a tank that
 
 **What's the difference between an inspection and a pumping?**
 An inspection checks the tank, baffles, and drainfield for problems and measures sludge and scum levels; pumping physically removes the accumulated solids. You need an inspection every one to three years, but you only pump when the inspection shows it's necessary, typically every three to five years.
-
-<!-- QA tell-check: reviewed for em/en dashes (none), banned AI vocabulary (none), signposting phrases (none), rule-of-three overuse (none forced). Original computed table flagged as first-hand operator content. -->

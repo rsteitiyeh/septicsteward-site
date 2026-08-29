@@ -59,5 +59,3 @@ Yes, directly. Skipping pump-outs lets solids migrate from the tank into the dra
 
 **How do I find out how old my current system is?**
 Check your local health or environmental department's permit records, which typically list installation date, or ask the previous owner for the "as-built" drawing and maintenance history if you bought the home.
-
-<!-- QA tell-check: reviewed for em/en dashes (none), banned AI vocabulary (none), signposting phrases (none). Honest source-disagreement framing kept intact rather than smoothed over, per positive-uncertainty requirement. -->

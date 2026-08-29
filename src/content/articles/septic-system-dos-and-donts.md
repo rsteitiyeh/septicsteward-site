@@ -56,5 +56,3 @@ Standard household cleaners and single-ply or septic-labeled toilet paper break 
 
 **How do I know where my drain field is if I just bought the house?**
 Request the septic permit record from the county health department, which usually includes a site sketch, or hire a septic contractor to locate and mark it with a probe. Knowing the boundary before you landscape, fence, or build anything is worth the cost of a locate visit.
-
-<!-- QA tell-audit: checked for em/en dashes (none), banned AI vocabulary (none), no "it's not just X it's Y" constructions, no generic upbeat closer. Sources named inline (EPA SepticSmart pages) rather than vague "experts say." Varied sentence length; the additive section carries an honest, specific claim (EPA: no established effectiveness) rather than a hedge. -->

@@ -59,5 +59,3 @@ Most states require a licensed septic installer for new systems, and self-instal
 
 **What happens if the perc test fails?**
 A failed perc test doesn't mean you can't build; it usually means you need an engineered system (mound, aerobic treatment unit, or pressure-dosed drain field) instead of a conventional gravity system, which raises the cost but is still a permitted path in nearly every jurisdiction.
-
-<!-- QA tell-audit: checked for em/en dashes (none), banned AI vocabulary (none), rule-of-three padding (none found), vague authority phrases (replaced with named sources: EPA, Angi 2026, SepticTankHub 2026). Sentence rhythm varied short/long. Operator-voice detail: soil-compaction/equipment-staging note and finished-basement sizing note are first-hand practical asides, not generic filler. -->

@@ -76,5 +76,3 @@ The above-ground work carries normal excavation risks like any yard project. The
 
 **Do I need a permit to install a riser?**
 Often not for a like-for-like riser on an existing lid, but rules vary by county. Check with your local health or environmental department before you dig if you're unsure.
-
-<!-- QA tell-check: reviewed for em/en dashes (none), banned AI vocabulary (none), signposting phrases (none). Mandatory never-enter-tank safety caveat sourced and placed prominently per task requirement. -->

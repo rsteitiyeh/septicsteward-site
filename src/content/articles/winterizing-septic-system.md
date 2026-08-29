@@ -68,5 +68,3 @@ Because too little wastewater is moving through the system to keep it above free
 
 **Should I stop using my garbage disposal in winter?**
 It's not a winter-specific rule, but reducing garbage disposal use year-round eases solids buildup, and a system already stressed by cold weather is not the time to add extra load.
-
-<!-- QA tell-check: reviewed for em/en dashes (none), banned AI vocabulary (none), signposting phrases (none). State-vs-university source overlap kept honest rather than merged into one voice. -->

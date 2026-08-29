@@ -63,5 +63,3 @@ Septic, by definition; there's no recurring utility bill. Sewer averages around 
 
 **Which system is more reliable during a power outage?**
 Conventional gravity-fed septic systems keep working during a power outage since they don't rely on electricity. Sewer service is generally unaffected by outages at the home level too, though a municipal pump station outage could affect service in some areas.
-
-<!-- QA tell-check: reviewed for em/en dashes (none), banned AI vocabulary (none), signposting phrases (none). Cost math presented as our own computed illustration, clearly separated from sourced base figures. -->

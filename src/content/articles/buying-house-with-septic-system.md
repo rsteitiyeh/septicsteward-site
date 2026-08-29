@@ -75,5 +75,3 @@ There's no hard cutoff, but 25 to 30 years old is the point EPA associates with 
 
 **Can I negotiate the price if the septic inspection finds problems?**
 Yes, this is standard practice. A failing drain field or an undersized tank for the home's bedroom count are common, legitimate grounds for a price adjustment or a seller-funded repair before closing.
-
-<!-- QA tell-check: reviewed for em/en dashes (none), banned AI vocabulary (none), signposting phrases (none). Checklist table framed as our own buyer-risk synthesis of EPA's inspection criteria. -->
